@@ -4,7 +4,7 @@ var path = require('path');
 const app = express();
 
 // routes
-app.use(express.static('public'));
+app.use(express.static('src/public'));
 app.set('views', './views');
 
 // view engine setup
