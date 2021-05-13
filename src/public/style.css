@@ -106,6 +106,7 @@ body {
 }
 .root .main .screen .apps .time .data {
   font-size: 13px;
+	margin-left: -10px;
 }
 .root .main .screen .apps .icons {
 	display: flex;

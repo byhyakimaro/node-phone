@@ -2,7 +2,19 @@
 
 const week = ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'];
 
-const year = monthYear = [];
+const monthYear = [
+'janeiro',
+'fevereiro',
+'março',
+'abril',
+'maio',
+'junho',
+'julho',
+'agosto',
+'setembro',
+'outubro',
+'novembro',
+'dezembro'];
 
 const main = {
   updateTime() {
@@ -13,11 +25,11 @@ const main = {
 		var hour = date.getHours();
 
 		var year = date.getFullYear();
-		var month = date.getMonth(); // beware: January = 0; February = 1, etc.
+		var month = monthYear[date.getMonth()]; // beware: January = 0; February = 1, etc.
 		var day = date.getDate();
 
 		var dayOfWeek = week[date.getDay()]; // Sunday = 0, Monday = 1, etc.
-		$('.time .data').innerHTML = `${dayOfWeek},${day} marco`;
+		$('.time .data').innerHTML = `${dayOfWeek},${day} de ${month}`;
 		$('.horario').innerHTML = `${hour}:${minutes}`;
 		$('.time .hora').innerHTML = hour;
 		$('.time .minuto').innerHTML = minutes;
