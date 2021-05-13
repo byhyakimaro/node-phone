@@ -22,7 +22,7 @@ const main = {
 
 		var time = date.toLocaleTimeString().split(':');
 		var year = date.getFullYear();
-		var month = monthYear[date.getMonth()]; // beware: January = 0; February = 1, etc.
+		var month = monthYear[date.getMonth()]; // January = 0; February = 1, etc.
 		var day = date.getDate();
 
 		var dayOfWeek = week[date.getDay()]; // Sunday = 0, Monday = 1, etc.
