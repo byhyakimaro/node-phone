@@ -94,14 +94,15 @@ body {
 	fill: white;
 }
 .root .main .screen .apps {
-  width: 100%;
+	width: 248px;
   flex-wrap: wrap;
   display: flex;
+	justify-content: center;
   margin: 10px 20px;
 }
 .root .main .screen .apps .time {
 	text-shadow: 0.1em 0.1em 0.2em black;
-  margin: 25px 81px 51px 86px;
+  margin: 25px 0 51px 0;
   font-size: 70px;
 }
 .root .main .screen .apps .time .data {
@@ -112,7 +113,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
   width: 90%;
-  margin-left: -5px;
+	justify-content: center;
   position: absolute;
   bottom: 80px;
 }
