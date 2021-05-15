@@ -109,7 +109,7 @@ body {
   font-size: 13px;
 	margin-left: -10px;
 }
-.root .main .screen .apps .icons {
+.root .main .screen .icons {
 	display: flex;
 	flex-wrap: wrap;
   width: 90%;
@@ -117,7 +117,7 @@ body {
   position: absolute;
   bottom: 80px;
 }
-.root .main .screen .apps .icons .icon {
+.root .main .screen .icons .icon {
   width: 43px;
   height: 43px;
   padding: 5px 10px;
