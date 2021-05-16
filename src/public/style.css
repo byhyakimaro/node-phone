@@ -95,6 +95,7 @@ body {
 }
 .root .main .screen .apps {
 	width: 248px;
+	height: 415px;
   flex-wrap: wrap;
   display: flex;
 	justify-content: center;
