@@ -1,5 +1,11 @@
 //let $ = document.querySelector.bind(document);
 
+const apps = [
+	{
+		name: '',
+	},
+];
+
 const week = ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'];
 
 const monthYear = [

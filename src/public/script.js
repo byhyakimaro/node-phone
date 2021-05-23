@@ -1,6 +1,7 @@
 let $ = document.querySelector.bind(document);
 
 $('.icon-phone').addEventListener('click', () => {
+	$('.root .main .screen .icons').style.display = "none";
 	$('.root .main .screen .apps').style.display = "none";
 	$('.root .main .screen').style.background = "#23242e";
 	$('.message').style.display = "block";
@@ -12,6 +13,7 @@ $('.icon-phone').addEventListener('click', () => {
 });
 
 $('.icon-contacts').addEventListener('click', () => {
+	$('.root .main .screen .icons').style.display = "none";
 	$('.root .main .screen .apps').style.display = "none";
 	$('.root .main .screen').style.background = "#23242e";
 	$('.numbers').style.display = "block";
@@ -23,6 +25,7 @@ $('.icon-contacts').addEventListener('click', () => {
 });
 
 $('.icon-whatsapp').addEventListener('click', () => {
+	$('.root .main .screen .icons').style.display = "none";
 	$('.root .main .screen .apps').style.display = "none";
 	$('.root .main .screen').style.background = "white";
 	$('.whatsapp').style.display = "block";
@@ -34,6 +37,7 @@ $('.icon-whatsapp').addEventListener('click', () => {
 });
 
 $('.icon-settings').addEventListener('click', () => {
+	$('.root .main .screen .icons').style.display = "none";
 	$('.root .main .screen .apps').style.display = "none";
 	$('.root .main .screen').style.background = "#23242e";
 	//$('.configs').style.display = "block";
@@ -45,6 +49,7 @@ $('.icon-settings').addEventListener('click', () => {
 });
 
 $('.root .main .screen .buttons .center').addEventListener('click', () => {
+	$('.root .main .screen .icons').style.display = "flex";
 	$('.root .main .screen .apps').style.display = "flex";
 	$('.root .main .screen').style.background = "url('https://cdn.discordapp.com/attachments/832460992196640829/833132876396101652/FundoIphone2.png')";
 	$('.whatsapp').style.display = "none";
