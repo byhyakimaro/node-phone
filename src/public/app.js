@@ -1,10 +1,24 @@
-//let $ = document.querySelector.bind(document);
+let $ = document.querySelector.bind(document);
 
 const apps = [
 	{
-		name: '',
+		name: 'whatsapp',
+		html: ``
+	}
+]
+
+const phone = {
+	element: $('.root'),
+	get nowApp() {
+		return $('.screen');
 	},
-];
+	openApp(app) {
+		const lastApp = this.nowApp;
+
+		if(typeof app === 'string')
+			app === apps.find
+	},
+}
 
 const week = ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'];
 

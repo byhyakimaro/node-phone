@@ -1,5 +1,3 @@
-let $ = document.querySelector.bind(document);
-
 $('.icon-phone').addEventListener('click', () => {
 	$('.root .main .screen .icons').style.display = "none";
 	$('.root .main .screen .apps').style.display = "none";
@@ -9,7 +7,6 @@ $('.icon-phone').addEventListener('click', () => {
 	$('.root .main .screen .buttons-top').style.borderRadius = "0";
 	$('.root .main .screen .buttons-top').style.borderTopRightRadius = "10px";
 	$('.root .main .screen .buttons-top').style.borderTopLeftRadius = "10px";
-	$('.root .main .glass').style.display = "none";
 });
 
 $('.icon-contacts').addEventListener('click', () => {
@@ -21,7 +18,6 @@ $('.icon-contacts').addEventListener('click', () => {
 	$('.root .main .screen .buttons-top').style.borderRadius = "0";
 	$('.root .main .screen .buttons-top').style.borderTopRightRadius = "10px";
 	$('.root .main .screen .buttons-top').style.borderTopLeftRadius = "10px";
-	$('.root .main .glass').style.display = "none";
 });
 
 $('.icon-whatsapp').addEventListener('click', () => {
@@ -33,7 +29,6 @@ $('.icon-whatsapp').addEventListener('click', () => {
 	$('.root .main .screen .buttons-top').style.borderRadius = "0";
 	$('.root .main .screen .buttons-top').style.borderTopRightRadius = "10px";
 	$('.root .main .screen .buttons-top').style.borderTopLeftRadius = "10px";
-	$('.root .main .glass').style.display = "none";
 });
 
 $('.icon-settings').addEventListener('click', () => {
@@ -45,7 +40,6 @@ $('.icon-settings').addEventListener('click', () => {
 	$('.root .main .screen .buttons-top').style.borderRadius = "0";
 	$('.root .main .screen .buttons-top').style.borderTopRightRadius = "10px";
 	$('.root .main .screen .buttons-top').style.borderTopLeftRadius = "10px";
-	$('.root .main .glass').style.display = "none";
 });
 
 $('.root .main .screen .buttons .center').addEventListener('click', () => {
