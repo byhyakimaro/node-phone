@@ -52,5 +52,4 @@ $('.root .main .screen .buttons .center').addEventListener('click', () => {
 	//$('.configs').style.display = "none";
 	$('.root .main .screen .buttons-top').style.background = "rgba(49, 18, 18, 10%)";
 	$('.root .main .screen .buttons-top').style.borderRadius = "10px";
-	$('.root .main .glass').style.display = "flex";
 });
