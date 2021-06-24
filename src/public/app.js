@@ -25,14 +25,15 @@ const monthYear = [
 
 const main = {
 	element: $('.cellphone'),
+	historyApps: [],
 	get nowApp() {
-		return $('.screens').dataset.app;
+		return $('.screens');
 	},
 	openApp(app) {
-		const lastApp = this.nowApp;
+		const lastApp = this.nowApp.dataset.app;
 
-		if(typeof app === 'string')
-			app === apps.find
+		this.historyApps.unshift(app);
+		this.nowApp.dataset.app = app;
 	},
   updateTime() {
 		var date = new Date;
@@ -57,10 +58,18 @@ const main = {
 	setWallpapers(wallpaper) {
 		this.element.style.background = `url('${wallpaper}')`
 	},
+	goBack() {
+		if(this.nowApp.dataset.app === 'home-screen') return;
+
+		this.historyApps.shift();
+	},
 	loadApp() {
 		this.element.onclick = ({ target }) => {
 			const app = target.dataset.app;
-			if(app) console.log(app);
+			if(app) this.openApp(app);
+
+			const button = target.dataset.button;
+      if(button) this[button]();
 		}
 	}
 }
