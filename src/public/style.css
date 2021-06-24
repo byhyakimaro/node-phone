@@ -141,10 +141,6 @@ body {
 	width: 17px;
 	padding: 0 27px;
 }
-.root .main .screen .buttons .left:hover, .center:hover, .right:hover {
-	margin-top: 8px;
-  filter: drop-shadow(2px 4px 6px black);
-}
 .root .main .screen .whatsapp {
   width: 100%;
 }
