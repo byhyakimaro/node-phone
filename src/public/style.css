@@ -21,20 +21,6 @@ body {
 	border-radius: 20px;
   overflow: hidden;
 }
-.cellphone .main {
-	display: flex;
-	width: 300px;
-	justify-content: center;
-	height: 600px;
-	border-radius: 20px;
-	border: solid 2px #d9dbdc;
-}
-.cellphone .main .screens {
-	margin: 7px 6px 7px 6px;
-	height: 586px;
-	width: 100%;
-	border-radius: 10px;
-}
 .cellphone:after,.cellphone:before {
   content: "";
   position: absolute;
@@ -51,6 +37,20 @@ body {
 }
 .cellphone:before {
   right: -1px;
+}
+.cellphone .main {
+	display: flex;
+	width: 300px;
+	justify-content: center;
+	height: 600px;
+	border-radius: 20px;
+	border: solid 2px #d9dbdc;
+}
+.cellphone .main .screens {
+	margin: 7px 6px 7px 6px;
+	height: 586px;
+	width: 100%;
+	border-radius: 10px;
 }
 .cellphone .main .screens .buttons-top {
 	display: flex;
