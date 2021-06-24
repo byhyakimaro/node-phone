@@ -30,14 +30,14 @@ body {
 	border-radius: 20px;
 	border: solid 2px #d9dbdc;
 }
-.root .main .screen {
+.root .main .screens {
 	margin: 7px 6px 7px 6px;
 	height: 586px;
 	width: 100%;
 	background: url('https://cdn.discordapp.com/attachments/832460992196640829/833132876396101652/FundoIphone2.png');
 	border-radius: 10px;
 }
-.root .main .screen:after,.root .main .screen:before {
+.root .main .screens:after,.root .main .screens:before {
   content: "";
   position: absolute;
   background: white;
@@ -48,13 +48,13 @@ body {
   filter: blur(1px);
   top: 0;
 }
-.root .main .screen:after {
+.root .main .screens:after {
   left: -1px
 }
-.root .main .screen:before {
+.root .main .screens:before {
   right: -1px;
 }
-.root .main .screen .buttons-top {
+.root .main .screens .buttons-top {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -63,10 +63,10 @@ body {
 	background: rgba(49, 18, 18, 10%);
 	border-radius: 10px;
 }
-.root .main .screen .buttons-top .horario {
+.root .main .screens .buttons-top .horario {
 	padding: 5px 10px;
 }
-.root .main .screen .buttons-top .camera {
+.root .main .screens .buttons-top .camera {
 	display: flex;
 	justify-content: center;
 	border-radius: 30px;
@@ -77,7 +77,7 @@ body {
 	border: 2px solid rgba(255, 255, 255, 0.05);
 	margin-left: 10px;
 }
-.root .main .screen .buttons-top .camera .camera1 {
+.root .main .screens .buttons-top .camera .camera1 {
 	background: #1b1b52;
 	width: 6px;
 	height: 6px;
@@ -85,15 +85,15 @@ body {
 	margin-top: 2.5px;
 	filter: blur(1px);
 }
-.root .main .screen .buttons-top .bateria {
+.root .main .screens .buttons-top .bateria {
 	margin: 3px 10px;
 }
-.root .main .screen .buttons-top .bateria svg {
+.root .main .screens .buttons-top .bateria svg {
 	width: 17px;
 	opacity: 0.8;
 	fill: white;
 }
-.root .main .screen .apps {
+.root .main .screens .apps {
 	width: 248px;
 	height: 415px;
   flex-wrap: wrap;
@@ -101,16 +101,16 @@ body {
 	justify-content: center;
   margin: 10px 20px;
 }
-.root .main .screen .apps .time {
+.root .main .screens .apps .time {
 	text-shadow: 0.1em 0.1em 0.2em black;
   margin: 25px 0 51px 0;
   font-size: 70px;
 }
-.root .main .screen .apps .time .data {
+.root .main .screens .apps .time .data {
   font-size: 13px;
 	margin-left: -10px;
 }
-.root .main .screen .icons {
+.root .main .screens .icons {
 	display: flex;
 	flex-wrap: wrap;
   width: 90%;
@@ -118,12 +118,12 @@ body {
   position: absolute;
   bottom: 80px;
 }
-.root .main .screen .icons .icon {
+.root .main .screens .icons .icon {
   width: 43px;
   height: 43px;
   padding: 5px 10px;
 }
-.root .main .screen .buttons {
+.root .main .screens .buttons {
 	background: rgb(4 4 4 / 20%);
 	display: flex;
 	justify-content: center;
@@ -135,16 +135,17 @@ body {
   border-top-right-radius: 0;
 	bottom: 5px;
 }
-.root .main .screen .buttons .left, .center, .right {
+.root .main .screens .buttons .left, .center, .right {
 	margin-top: 10px;
 	height: 17px;
 	width: 17px;
 	padding: 0 27px;
+	cursor: pointer;
 }
-.root .main .screen .whatsapp {
+.root .main .screens .whatsapp {
   width: 100%;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-header {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-header {
   width: 100%;
   background: rgba(11,97,86,1);
   height: 80px;
@@ -154,54 +155,54 @@ body {
   flex-wrap: wrap;
 	transition: 1s;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-header .search {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-header .search {
   width: 100%;
   display: flex;
   justify-content: flex-end;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-header .search .logo {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-header .search .logo {
   width: 30%;
   padding: 10px 10px;
   font-size: 14px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-header .search svg {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-header .search svg {
   padding: 10px;
   width: 18px;
   fill: white;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-header .whatsappconversas {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-header .whatsappconversas {
   padding: 0 10px;
   border-bottom: 4px solid white;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-header .whatsapp-status {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-header .whatsapp-status {
   padding: 0 10px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-header .whatsapp-chamada {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-header .whatsapp-chamada {
   padding: 0 10px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body {
   width: 100%;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .conversas {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .conversas {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa {
   width: 100%;
   height: 57px;
   margin: 7px;
   display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .profile {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .profile {
   width: 50px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .profile img {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .profile img {
   padding-top: 4px;
   border-radius: 30px;
   width: 47px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .contato {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .contato {
   width: 208px;
   height: 100%;
   margin: 0px 0 0 10px;
@@ -210,7 +211,7 @@ body {
   flex-wrap: wrap;
   overflow: hidden;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .contato .nome {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .contato .nome {
   width: 50%;
   height: 50%;
 	color: black;
@@ -219,7 +220,7 @@ body {
 	font-weight: 600;
 	line-height: 38px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .contato .msg-data {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .contato .msg-data {
   width: 50%;
   height: 50%;
 	color: gray;
@@ -227,12 +228,12 @@ body {
 	font-size: 10px;
 	line-height: 41px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .contato .msg {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .contato .msg {
   width: 100%;
 	color: gray;
 	font-size: 13px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .new-chat {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .new-chat {
   position: absolute;
   width: 45px;
   height: 45px;
@@ -241,29 +242,29 @@ body {
   bottom: 65px;
   right: 22px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .new-chat svg {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .new-chat svg {
   padding: 10px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .meu-status {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .meu-status {
   width: 100%;
   height: 57px;
   margin: 7px;
   display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .meu-status .img-status {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .meu-status .img-status {
   width: 50px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .meu-status img {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .meu-status img {
   padding-top: 4px;
   border-radius: 30px;
   width: 47px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .meu-status .img-status .more {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .meu-status .img-status .more {
   position: absolute;
   width: 18px;
   height: 18px;
@@ -271,12 +272,12 @@ body {
   background: #26b326;
   border-radius: 20px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .meu-status .img-status .more svg {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .meu-status .img-status .more svg {
   fill: white;
   padding: 4px;
   width: 10px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .meu-status .info-status {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .meu-status .info-status {
   width: 208px;
   height: 100%;
   padding: 4px 0 0 13px;
@@ -284,7 +285,7 @@ body {
   flex-wrap: wrap;
   overflow: hidden;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .meu-status .info-status .nome {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .meu-status .info-status .nome {
   width: 100%;
   height: 50%;
   color: black;
@@ -292,29 +293,29 @@ body {
   line-height: 35px;
   font-weight: 600;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .meu-status .info-status .data {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .meu-status .info-status .data {
   width: 100%;
   height: 50%;
   color: gray;
   font-size: 11px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .contatos-status .status-recente .info {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .contatos-status .status-recente .info {
   color: gray;
   padding: 0 7px;
   font-size: 10px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .contatos-status .status-recente .status-recente-view {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .contatos-status .status-recente .status-recente-view {
   width: 95%;
   height: 57px;
   margin: 7px;
   display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .contatos-status .status-recente .status-recente-view .status-recente-view-img img {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .contatos-status .status-recente .status-recente-view .status-recente-view-img img {
   width: 47px;
   border-radius: 30px;
   padding-top: 4px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .contatos-status .status-recente .status-recente-view .status-recente-view-info {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .contatos-status .status-recente .status-recente-view .status-recente-view-info {
   width: 208px;
   height: 100%;
   padding: 4px 0 0 13px;
@@ -322,7 +323,7 @@ body {
   flex-wrap: wrap;
   overflow: hidden;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .contatos-status .status-recente .status-recente-view .status-recente-view-info .nome {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .contatos-status .status-recente .status-recente-view .status-recente-view-info .nome {
   width: 100%;
   height: 50%;
   color: black;
@@ -330,13 +331,13 @@ body {
   line-height: 35px;
   font-weight: 600;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .contatos-status .status-recente .status-recente-view .status-recente-view-info .data {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .contatos-status .status-recente .status-recente-view .status-recente-view-info .data {
   width: 100%;
   height: 50%;
   color: gray;
   font-size: 11px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .new-text {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .new-text {
   position: absolute;
   width: 35px;
   height: 35px;
@@ -345,13 +346,13 @@ body {
   bottom: 120px;
   right: 26px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .new-text svg {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .new-text svg {
   fill: white;
   padding: 8px;
   width: 20px;
   height: 20px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .new-picture {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .new-picture {
 	position: absolute;
   width: 45px;
   height: 45px;
@@ -360,27 +361,27 @@ body {
   bottom: 65px;
   right: 22px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .status .new-picture svg {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .status .new-picture svg {
 	fill: white;
   padding: 10px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .chamadas {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .chamadas {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada {
   width: 100%;
   height: 57px;
   margin: 7px;
   display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-img img {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-img img {
   padding-top: 4px;
   border-radius: 30px;
   width: 47px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-info {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-info {
   width: 160px;
   height: 100%;
   padding: 4px 0 0 13px;
@@ -389,7 +390,7 @@ body {
   overflow: hidden;
   border-bottom: 1px solid #cccccc;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-info .nome {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-info .nome {
   width: 100%;
   height: 50%;
   color: black;
@@ -397,36 +398,36 @@ body {
   line-height: 35px;
   font-weight: 600;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-info .data {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-info .data {
   width: 100%;
   height: 50%;
 	color: gray;
   font-size: 11px;
   display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-info .data .data-svg {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-info .data .data-svg {
   width: 11%;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-info .data .data-svg svg {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-info .data .data-svg svg {
   width: 13px;
   fill: green;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-info .data .data-info {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-info .data .data-info {
   width: 89%;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-icon {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-icon {
   width: 50px;
   height: 100%;
   border-bottom: 1px solid #cccccc;
   padding-top: 4px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-icon svg {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .chamadas .chamada .chamada-icon svg {
   width: 20px;
   height: 20px;
   fill: green;
   padding: 15px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .chamadas .new-chamada {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .chamadas .new-chamada {
   position: absolute;
   width: 45px;
   height: 45px;
@@ -435,98 +436,98 @@ body {
   bottom: 65px;
 	right: 22px;
 }
-.root .main .screen .whatsapp .whatsapp-main .whatsapp-body .chamadas .new-chamada svg {
+.root .main .screens .whatsapp .whatsapp-main .whatsapp-body .chamadas .new-chamada svg {
 	padding: 10px;
   fill: white;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-header {
+.root .main .screens .whatsapp .whatsapp-chat .chat-header {
   width: 100%;
   height: 40px;
   background: #0b6156;
   display: flex;
   flex-wrap: wrap;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-header .icon-chat {
+.root .main .screens .whatsapp .whatsapp-chat .chat-header .icon-chat {
   height: 40px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-header .icon-chat svg {
+.root .main .screens .whatsapp .whatsapp-chat .chat-header .icon-chat svg {
   padding: 10px;
   fill: white;
   height: 20px;
   width: 20px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-header .img-profile {
+.root .main .screens .whatsapp .whatsapp-chat .chat-header .img-profile {
   width: 40px;
   height: 40px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-header .img-profile img {
+.root .main .screens .whatsapp .whatsapp-chat .chat-header .img-profile img {
   width: 35px;
   border-radius: 20px;
   padding-top: 2px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-header .contato {
+.root .main .screens .whatsapp .whatsapp-chat .chat-header .contato {
   padding: 0 3px;
   width: 110px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-header .contato .visto {
+.root .main .screens .whatsapp .whatsapp-chat .chat-header .contato .visto {
   font-size: 10px;
   color: white;
   line-height: 20px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-header .icon-video {
+.root .main .screens .whatsapp .whatsapp-chat .chat-header .icon-video {
   width: 32px;
   padding-top: 3px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-header .icon-video svg {
+.root .main .screens .whatsapp .whatsapp-chat .chat-header .icon-video svg {
   fill: white;
   padding-top: 2px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-header .icon-ligacao {
+.root .main .screens .whatsapp .whatsapp-chat .chat-header .icon-ligacao {
   width: 32px;
   padding-top: 3px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-header .icon-ligacao svg {
+.root .main .screens .whatsapp .whatsapp-chat .chat-header .icon-ligacao svg {
   fill: white;
   padding: 2px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-header .icon-more {
+.root .main .screens .whatsapp .whatsapp-chat .chat-header .icon-more {
   padding-top: 3px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-header .icon-more svg {
+.root .main .screens .whatsapp .whatsapp-chat .chat-header .icon-more svg {
   fill: white;
   padding: 2px;
 }
-.root .main .screen .whatsapp .whatsapp-chat  .chat-call-min,
-.root .main .screen .whatsapp .whatsapp-main .main-call-min {
+.root .main .screens .whatsapp .whatsapp-chat  .chat-call-min,
+.root .main .screens .whatsapp .whatsapp-main .main-call-min {
   width: 100%;
   height: 30px;
   background: #48ec48;
   display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-call-min .texto,
-.root .main .screen .whatsapp .whatsapp-main .main-call-min .texto {
+.root .main .screens .whatsapp .whatsapp-chat .chat-call-min .texto,
+.root .main .screens .whatsapp .whatsapp-main .main-call-min .texto {
   font-size: 14px;
   padding: 7px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-call-min .tempo,
-.root .main .screen .whatsapp .whatsapp-main .main-call-min .tempo {
+.root .main .screens .whatsapp .whatsapp-chat .chat-call-min .tempo,
+.root .main .screens .whatsapp .whatsapp-main .main-call-min .tempo {
   padding: 8px 5px 5px 51px;
   font-size: 13px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat {
+.root .main .screens .whatsapp .whatsapp-chat .chat {
   overflow-y: scroll;
   width: 96%;
   height: 420px;
   margin: 5px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat::-webkit-scrollbar {
+.root .main .screens .whatsapp .whatsapp-chat .chat::-webkit-scrollbar {
   display: none;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat .msg-recebida {
+.root .main .screens .whatsapp .whatsapp-chat .chat .msg-recebida {
   width: 100%;
   height: min-content;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat .msg-recebida .msg {
+.root .main .screens .whatsapp .whatsapp-chat .chat .msg-recebida .msg {
   background: #215b5d;
   margin-top: 10px;
   padding: 5px;
@@ -536,34 +537,34 @@ body {
   height: fit-content;
   display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat .msg-recebida .msg .texto, 
-.root .main .screen .whatsapp .whatsapp-chat .chat .msg-enviada .msg .texto {
+.root .main .screens .whatsapp .whatsapp-chat .chat .msg-recebida .msg .texto, 
+.root .main .screens .whatsapp .whatsapp-chat .chat .msg-enviada .msg .texto {
   padding: 0 5px;
   font-size: 15px;
 	word-break: break-all;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat .msg-recebida .msg .horario,
-.root .main .screen .whatsapp .whatsapp-chat .chat .msg-enviada .msg .horario {
+.root .main .screens .whatsapp .whatsapp-chat .chat .msg-recebida .msg .horario,
+.root .main .screens .whatsapp .whatsapp-chat .chat .msg-enviada .msg .horario {
   font-size: 9px;
   padding-top: 8px;
   color: #cecece;
   width: 25px;
   height: 15px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat .msg-recebida .msg .check,
-.root .main .screen .whatsapp .whatsapp-chat .chat .msg-enviada .msg .check {
+.root .main .screens .whatsapp .whatsapp-chat .chat .msg-recebida .msg .check,
+.root .main .screens .whatsapp .whatsapp-chat .chat .msg-enviada .msg .check {
   width: 17px;
   height: 22px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat .msg-recebida .check svg,
-.root .main .screen .whatsapp .whatsapp-chat .chat .msg-enviada .msg .check svg {
+.root .main .screens .whatsapp .whatsapp-chat .chat .msg-recebida .check svg,
+.root .main .screens .whatsapp .whatsapp-chat .chat .msg-enviada .msg .check svg {
   width: 11px;
   height: 11px;
   padding-top: 8px;
   padding-left: 3px;
   fill: #cecece;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat .msg-enviada .msg {
+.root .main .screens .whatsapp .whatsapp-chat .chat .msg-enviada .msg {
   background: #215b5d;
   margin-top: 10px;
   padding: 5px;
@@ -573,26 +574,26 @@ body {
   height: fit-content;
   display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat .msg-enviada {
+.root .main .screens .whatsapp .whatsapp-chat .chat .msg-enviada {
   width: 100%;
   height: min-content;
   display: flex;
   justify-content: flex-end;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-send {
+.root .main .screens .whatsapp .whatsapp-chat .chat-send {
   width: 97%;
   height: 40px;
   display: flex;
   margin: 0 5px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-send .text-chat {
+.root .main .screens .whatsapp .whatsapp-chat .chat-send .text-chat {
   width: 85%;
   margin-right: 5px;
   border-radius: 20px;
   background: #464545;
 	display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-send .text-chat input {
+.root .main .screens .whatsapp .whatsapp-chat .chat-send .text-chat input {
   margin: 7px 5px;
   width: 157px;
   height: 26px;
@@ -600,243 +601,243 @@ body {
   color: white;
   font-size: 14px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-send .text-chat .emoticons svg {
+.root .main .screens .whatsapp .whatsapp-chat .chat-send .text-chat .emoticons svg {
   fill: #cecece;
   padding: 8px 0 8px 8px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-send .text-chat .picture svg {
+.root .main .screens .whatsapp .whatsapp-chat .chat-send .text-chat .picture svg {
   fill: #cecece;
   padding-top: 9px;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-send .button-chat {
+.root .main .screens .whatsapp .whatsapp-chat .chat-send .button-chat {
   width: 15%;
   border-radius: 20px;
   background: #26b326;
 }
-.root .main .screen .whatsapp .whatsapp-chat .chat-send .button-chat svg {
+.root .main .screens .whatsapp .whatsapp-chat .chat-send .button-chat svg {
   padding: 8px;
   fill: white;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .header-new-chat {
+.root .main .screens .whatsapp .whatsapp-new-chat .header-new-chat {
   height: 45px;
   width: 100%;
   background: #0b6156;
   display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .header-new-chat .icon-new-chat svg {
+.root .main .screens .whatsapp .whatsapp-new-chat .header-new-chat .icon-new-chat svg {
   width: 20px;
   height: 20px;
   fill: white;
   padding: 10px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .header-new-chat .contatos-chat {
+.root .main .screens .whatsapp .whatsapp-new-chat .header-new-chat .contatos-chat {
   width: 155px;
   margin-left: 5px;
   padding-top: 3px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .header-new-chat .contatos-chat .title-new-chat {
+.root .main .screens .whatsapp .whatsapp-new-chat .header-new-chat .contatos-chat .title-new-chat {
   width: 100%;
   height: 50%;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .header-new-chat .contatos-chat .contatos-num {
+.root .main .screens .whatsapp .whatsapp-new-chat .header-new-chat .contatos-chat .contatos-num {
   height: 50%;
   width: 100%;
   font-size: 10px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .header-new-chat .search-new-chat svg {
+.root .main .screens .whatsapp .whatsapp-new-chat .header-new-chat .search-new-chat svg {
   padding: 10px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .header-new-chat .more-new-chat svg {
+.root .main .screens .whatsapp .whatsapp-new-chat .header-new-chat .more-new-chat svg {
   padding: 10px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos {
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos {
   overflow-y: scroll;
   width: 96%;
   height: 460px;
   margin: 5px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos::-webkit-scrollbar {
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos::-webkit-scrollbar {
 	display: none;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .novo-grupo,
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .novo-contato {
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .novo-grupo,
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .novo-contato {
   width: 100%;
   height: 50px;
   display: flex;
 	margin-bottom: 5px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .novo-grupo .grupo-icon,
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .novo-contato .contato-icon {
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .novo-grupo .grupo-icon,
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .novo-contato .contato-icon {
   padding: 5px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .novo-grupo .grupo-icon .icon,
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .novo-contato .contato-icon .icon {
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .novo-grupo .grupo-icon .icon,
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .novo-contato .contato-icon .icon {
   width: 40px;
   height: 40px;
   background: #26b326;
   border-radius: 20px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .novo-grupo .grupo-icon .icon svg,
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .novo-contato .contato-icon .icon svg {
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .novo-grupo .grupo-icon .icon svg,
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .novo-contato .contato-icon .icon svg {
   width: 30px;
   height: 30px;
   fill: white;
   padding: 4px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .novo-grupo .grupo,
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .novo-contato .contato {
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .novo-grupo .grupo,
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .novo-contato .contato {
   color: black;
   width: 100%;
   line-height: 51px;
   padding-left: 7px;
   font-weight: 600;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .contato {
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .contato {
   display: flex;
   width: 100%;
   height: 50px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .contato .contato-img {
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .contato .contato-img {
   padding: 5px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .contato .contato-img img {
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .contato .contato-img img {
   width: 40px;
   height: 40px;
   border-radius: 20px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .contato .contato-info {
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .contato .contato-info {
   width: 100%;
   padding-left: 7px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .contato .contato-info .name {
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .contato .contato-info .name {
   width: 100%;
   height: 50%;
   color: black;
   font-weight: 600;
   line-height: 30px;
 }
-.root .main .screen .whatsapp .whatsapp-new-chat .contatos .contato .contato-info .status {
+.root .main .screens .whatsapp .whatsapp-new-chat .contatos .contato .contato-info .status {
   width: 100%;
   height: 50%;
   color: #cecece;
   font-size: 14px;
 }
-.root .main .screen .whatsapp .whatsapp-call .header {
+.root .main .screens .whatsapp .whatsapp-call .header {
   width: 100%;
   height: 85px;
   display: flex;
   flex-wrap: wrap;
   background: #0b6156;
 }
-.root .main .screen .whatsapp .whatsapp-call .header .header-top {
+.root .main .screens .whatsapp .whatsapp-call .header .header-top {
   width: 100%;
   height: 25px;
   display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-call .header .header-top .top-icon {
+.root .main .screens .whatsapp .whatsapp-call .header .header-top .top-icon {
   width: 35px;
 }
-.root .main .screen .whatsapp .whatsapp-call .header .header-top .top-icon svg {
+.root .main .screens .whatsapp .whatsapp-call .header .header-top .top-icon svg {
   padding: 0 5px;
 }
-.root .main .screen .whatsapp .whatsapp-call .header .header-top .top-info {
+.root .main .screens .whatsapp .whatsapp-call .header .header-top .top-info {
   width: 100%;
   text-align: center;
   display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-call .header .header-top .top-info .info-icon {
+.root .main .screens .whatsapp .whatsapp-call .header .header-top .top-info .info-icon {
   width: 25px;
   height: 20px;
 }
-.root .main .screen .whatsapp .whatsapp-call .header .header-top .top-info svg {
+.root .main .screens .whatsapp .whatsapp-call .header .header-top .top-info svg {
 	width: 10px;
   fill: white;
   height: 10px;
 }
-.root .main .screen .whatsapp .whatsapp-call .header .header-top .top-info .info-texto {
+.root .main .screens .whatsapp .whatsapp-call .header .header-top .top-info .info-texto {
   font-size: 10px;
   padding-top: 5px;
   width: 210px;
 }
-.root .main .screen .whatsapp .whatsapp-call .header  .header-middle {
+.root .main .screens .whatsapp .whatsapp-call .header  .header-middle {
   width: 100%;
   text-align: center;
 }
-.root .main .screen .whatsapp .whatsapp-call .header .header-bottom {
+.root .main .screens .whatsapp .whatsapp-call .header .header-bottom {
   font-size: 10px;
   width: 100%;
   text-align: center;
 }
-.root .main .screen .whatsapp .whatsapp-call .profile {
+.root .main .screens .whatsapp .whatsapp-call .profile {
   width: 100%;
   height: 375px;
   background: url('https://cdn.discordapp.com/attachments/758616655382577152/834857189184372786/knonet.png');
   display: flex;
   justify-content: center;
 }
-.root .main .screen .whatsapp .whatsapp-call .profile .end-call {
+.root .main .screens .whatsapp .whatsapp-call .profile .end-call {
   margin-top: 295px;
 }
-.root .main .screen .whatsapp .whatsapp-call .profile .end-call .call-icon {
+.root .main .screens .whatsapp .whatsapp-call .profile .end-call .call-icon {
   width: 45px;
   height: 45px;
   background: #b71212;
   border-radius: 30px;
 }
-.root .main .screen .whatsapp .whatsapp-call .profile .end-call svg {
+.root .main .screens .whatsapp .whatsapp-call .profile .end-call svg {
   width: 35px;
   height: 35px;
   fill: white;
   padding: 5px;
 }
-.root .main .screen .whatsapp .whatsapp-call .controls {
+.root .main .screens .whatsapp .whatsapp-call .controls {
   width: 100%;
   height: 55px;
   background: #0b6156;
   display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-call .controls .volume {
+.root .main .screens .whatsapp .whatsapp-call .controls .volume {
   width: 33%;
 }
-.root .main .screen .whatsapp .whatsapp-call .controls .volume svg {
+.root .main .screens .whatsapp .whatsapp-call .controls .volume svg {
   padding: 15px 20px 15px 42px;
   fill: white;
 }
-.root .main .screen .whatsapp .whatsapp-call .controls .video {
+.root .main .screens .whatsapp .whatsapp-call .controls .video {
   width: 33%;
 }
-.root .main .screen .whatsapp .whatsapp-call .controls .video svg {
+.root .main .screens .whatsapp .whatsapp-call .controls .video svg {
   padding: 15px 20px 15px 38px;
   fill: white;
 }
-.root .main .screen .whatsapp .whatsapp-call .controls .microfone {
+.root .main .screens .whatsapp .whatsapp-call .controls .microfone {
   width: 33%;
 }
-.root .main .screen .whatsapp .whatsapp-call .controls .microfone svg {
+.root .main .screens .whatsapp .whatsapp-call .controls .microfone svg {
   padding: 15px 20px 15px 30px;
   fill: white;
 }
-.root .main .screen .whatsapp .whatsapp-new-contacs .new-contacs-header {
+.root .main .screens .whatsapp .whatsapp-new-contacs .new-contacs-header {
   width: 100%;
   height: 50px;
   background: #23242e;
   display: flex;
 }
-.root .main .screen .whatsapp .whatsapp-new-contacs .new-contacs-header svg {
+.root .main .screens .whatsapp .whatsapp-new-contacs .new-contacs-header svg {
   padding: 13px;
   fill: white;
 }
-.root .main .screen .whatsapp .whatsapp-new-contacs .new-contacs-header .new-contacs-text {
+.root .main .screens .whatsapp .whatsapp-new-contacs .new-contacs-header .new-contacs-text {
   padding: 15px 2px;
   width: 175px;
 }
-.root .main .screen .whatsapp .whatsapp-new-contacs .new-contacs-header .new-contacs-save {
+.root .main .screens .whatsapp .whatsapp-new-contacs .new-contacs-header .new-contacs-save {
   font-size: 12px;
   color: #3939bb;
   padding: 18px 10px;
   font-weight: 1000;
 }
-.root .main .screen .whatsapp .whatsapp-new-contacs .new-contacs-body {
+.root .main .screens .whatsapp .whatsapp-new-contacs .new-contacs-body {
   width: 100%;
   height: 506px;
   background: #23242e;
@@ -846,24 +847,24 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-.root .main .screen .whatsapp .whatsapp-new-contacs .new-contacs-body .icon-contacts {
+.root .main .screens .whatsapp .whatsapp-new-contacs .new-contacs-body .icon-contacts {
   width: 100%;
   height: 80px;
 }
-.root .main .screen .whatsapp .whatsapp-new-contacs .new-contacs-body .icon-contacts svg {
+.root .main .screens .whatsapp .whatsapp-new-contacs .new-contacs-body .icon-contacts svg {
   width: 48px;
   height: 50px;
   fill: #3539b6;
   padding: 20px 120px;
 }
-.root .main .screen .whatsapp .whatsapp-new-contacs .new-contacs-body .nome {
+.root .main .screens .whatsapp .whatsapp-new-contacs .new-contacs-body .nome {
   width: 100%;
   height: 45px;
   margin: 10px 0;
   display: flex;
   justify-content: center;
 }
-.root .main .screen .whatsapp .whatsapp-new-contacs .new-contacs-body .nome input[name="nome"] {
+.root .main .screens .whatsapp .whatsapp-new-contacs .new-contacs-body .nome input[name="nome"] {
   background: #23242e;
   border: solid 1px white;
   border-radius: 5px;
@@ -872,14 +873,14 @@ body {
   color: white;
   padding: 0 10px;
 }
-.root .main .screen .whatsapp .whatsapp-new-contacs .new-contacs-body .sobrenome {
+.root .main .screens .whatsapp .whatsapp-new-contacs .new-contacs-body .sobrenome {
   width: 100%;
   height: 45px;
   margin: 10px 0;
   display: flex;
   justify-content: center;
 }
-.root .main .screen .whatsapp .whatsapp-new-contacs .new-contacs-body .sobrenome input[name="sobrenome"] {
+.root .main .screens .whatsapp .whatsapp-new-contacs .new-contacs-body .sobrenome input[name="sobrenome"] {
   background: #23242e;
   border: solid 1px white;
   border-radius: 5px;
@@ -888,14 +889,14 @@ body {
   color: white;
   padding: 0 10px;
 }
-.root .main .screen .whatsapp .whatsapp-new-contacs .new-contacs-body .telefone {
+.root .main .screens .whatsapp .whatsapp-new-contacs .new-contacs-body .telefone {
   width: 100%;
   height: 45px;
   margin: 10px 0;
   display: flex;
   justify-content: center;
 }
-.root .main .screen .whatsapp .whatsapp-new-contacs .new-contacs-body .telefone input[name="telefone"] {
+.root .main .screens .whatsapp .whatsapp-new-contacs .new-contacs-body .telefone input[name="telefone"] {
   background: #23242e;
   border: solid 1px white;
   border-radius: 5px;
@@ -1142,14 +1143,14 @@ body {
   font-size: 12px;
   padding-top: 6px;
 }
-.root .main .screen .numbers .contatos-main .header-main {
+.root .main .screens .numbers .contatos-main .header-main {
   width: 100%;
   height: 90px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.root .main .screen .numbers .contatos-main .header-main .header-search {
+.root .main .screens .numbers .contatos-main .header-main .header-search {
   width: 100%;
   margin: 10px;
   background: #2c2d3a;
@@ -1158,7 +1159,7 @@ body {
   display: flex;
 }
 
-.root .main .screen .numbers .contatos-main .header-main .header-more {
+.root .main .screens .numbers .contatos-main .header-main .header-more {
   width: 100%;
   font-size: 10px;
   text-align: center;
@@ -1166,47 +1167,47 @@ body {
   border-bottom: 1px solid gray;
 }
 
-.root .main .screen .numbers .contatos-main .header-main .header-search .icon-menu svg {
+.root .main .screens .numbers .contatos-main .header-main .header-search .icon-menu svg {
   padding: 5px;
   fill: #8d8fa0;
 }
 
-.root .main .screen .numbers .contatos-main .header-main .header-search input[name="search-contacts"] {
+.root .main .screens .numbers .contatos-main .header-main .header-search input[name="search-contacts"] {
   padding: 10px;
   background: inherit;
   color: white;
 	width: 185px;
 }
 
-.root .main .screen .numbers .contatos-main .header-main .header-search .icon-more svg {
+.root .main .screens .numbers .contatos-main .header-main .header-search .icon-more svg {
   fill: #8d8fa0;
   padding-top: 5px;
 }
-.root .main .screen .numbers .contatos-main .body-main {
+.root .main .screens .numbers .contatos-main .body-main {
   width: 100%;
   height: 465px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   overflow-y: scroll;
 }
-.root .main .screen .numbers .contatos-main .body-main::-webkit-scrollbar {
+.root .main .screens .numbers .contatos-main .body-main::-webkit-scrollbar {
   display:none;
 }
 
-.root .main .screen .numbers .contatos-main .body-main .contatos {
+.root .main .screens .numbers .contatos-main .body-main .contatos {
   margin-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.root .main .screen .numbers .contatos-main .body-main .contatos .contato {
+.root .main .screens .numbers .contatos-main .body-main .contatos .contato {
   width: 100%;
   height: 50px;
   margin: 5px;
   display: flex;
 }
 
-.root .main .screen .numbers .contatos-main .body-main .contatos .contato .lt-contato {
+.root .main .screens .numbers .contatos-main .body-main .contatos .contato .lt-contato {
   width: 40px;
   height: 40px;
   display: flex;
@@ -1217,7 +1218,7 @@ body {
   padding-right: 10px;
 }
 
-.root .main .screen .numbers .contatos-main .body-main .contatos .contato .img-contato {
+.root .main .screens .numbers .contatos-main .body-main .contatos .contato .img-contato {
   width: 40px;
   height: 40px;
   background: #2db34a;
@@ -1229,7 +1230,7 @@ body {
   font-size: 24px;
 }
 
-.root .main .screen .numbers .contatos-main .body-main .contatos .contato .nome-contato {
+.root .main .screens .numbers .contatos-main .body-main .contatos .contato .nome-contato {
   width: 165px;
   padding: 10px;
 }
