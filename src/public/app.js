@@ -54,9 +54,10 @@ const main = {
 	},
 	start() {
 		this.updateTime()
+		this.setWallpapers('https://cdn.discordapp.com/attachments/832460992196640829/833132876396101652/FundoIphone2.png');
 	},
 	setWallpapers(wallpaper) {
-		$('.screen').style.background = `url('${wallpaper}')`
+		$('.main').style.background = `url('${wallpaper}')`
 	}
 }
 
