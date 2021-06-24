@@ -20,6 +20,7 @@ body {
 	color: white;
 	border-radius: 20px;
   overflow: hidden;
+	background: black;
 }
 .cellphone:after,.cellphone:before {
   content: "";
