@@ -26,7 +26,7 @@ const monthYear = [
 const main = {
 	element: $('.cellphone'),
 	get nowApp() {
-		return $('.cellphone');
+		return $('.screens').dataset.app;
 	},
 	openApp(app) {
 		const lastApp = this.nowApp;
