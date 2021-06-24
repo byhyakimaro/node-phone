@@ -5,20 +5,7 @@ const apps = [
 		name: 'whatsapp',
 		html: ``
 	}
-]
-
-const phone = {
-	element: $('.root'),
-	get nowApp() {
-		return $('.screen');
-	},
-	openApp(app) {
-		const lastApp = this.nowApp;
-
-		if(typeof app === 'string')
-			app === apps.find
-	},
-}
+];
 
 const week = ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'];
 
@@ -37,6 +24,16 @@ const monthYear = [
 'dezembro'];
 
 const main = {
+	element: $('.cellphone'),
+	get nowApp() {
+		return $('.cellphone');
+	},
+	openApp(app) {
+		const lastApp = this.nowApp;
+
+		if(typeof app === 'string')
+			app === apps.find
+	},
   updateTime() {
 		var date = new Date;
 
@@ -53,11 +50,18 @@ const main = {
 		setTimeout(() => { this.updateTime() }, 1000);
 	},
 	start() {
-		this.updateTime()
+		this.updateTime();
+		this.loadApp();
 		this.setWallpapers('https://cdn.discordapp.com/attachments/832460992196640829/833132876396101652/FundoIphone2.png');
 	},
 	setWallpapers(wallpaper) {
-		$('.main').style.background = `url('${wallpaper}')`
+		this.element.style.background = `url('${wallpaper}')`
+	},
+	loadApp() {
+		this.element.onclick = ({ target }) => {
+			const app = target.dataset.app;
+			if(app) console.log(app);
+		}
 	}
 }
 
