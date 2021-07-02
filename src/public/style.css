@@ -86,7 +86,7 @@ body {
 .cellphone .main .screens .buttons-top .bateria {
 	margin: 3px 10px;
 }
-.cellphone .main .screens .buttons-top .bateria svg {
+.cellphone .main .screens .buttons-top .bateria > svg {
 	width: 17px;
 	opacity: 0.8;
 	fill: white;
