@@ -68,23 +68,17 @@ const main = {
 
 			const sameApp = newApp === lastApp;
 			setTimeout(() => {
-					if(!sameApp) {
-						toggle(lastApp, false);
-						
-						const mode = newApp.dataset.app !== 'home-screen' ? 'add' : 'remove';
-													
-						if(lastApp) {
-							const lastItem = apps.find(({ name }) => name === lastApp.dataset.app);
-							
-							if(lastItem && lastItem.unload) lastItem.unload(this, lastApp);
-							
-							if(mode === 'remove') setTimeout(() => lastApp.parentElement.removeChild(lastApp), 500);
-						};
+				if(!sameApp) {
+					toggle(lastApp, false);
+					const mode = newApp.dataset.app !== 'home-screen' ? 'add' : 'remove';		
 
-					}; 
-
+					if(lastApp) {
+						const lastItem = apps.find(({ name }) => name === lastApp.dataset.app);
+						if(lastItem && lastItem.unload) lastItem.unload(this, lastApp);
+						if(mode === 'remove') setTimeout(() => lastApp.parentElement.removeChild(lastApp), 500);
+					};
+				}; 
 			}, 1);
-
 		};
 	},
   updateTime() {
