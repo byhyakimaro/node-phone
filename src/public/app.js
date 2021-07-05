@@ -108,7 +108,7 @@ const main = {
 		this.setWallpapers('https://cdn.discordapp.com/attachments/832460992196640829/833132876396101652/FundoIphone2.png');
 	},
 	setWallpapers(wallpaper) {
-		this.element.style.background = `url('${wallpaper}')`
+		this.element.children[0].style.background = `url('${wallpaper}')`
 	},
 	goBack() {
 		if(this.nowApp.dataset.app === 'home-screen') return;
