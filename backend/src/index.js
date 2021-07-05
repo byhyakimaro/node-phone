@@ -2,13 +2,11 @@ const express = require('express');
 var path = require('path');
 
 const app = express();
+const port = 3000;
 
-// routes
-app.use(express.static(`${process.cwd()}/frontend/public`));
-app.set('views', `${process.cwd()}/frontend/public`);
-
-// view engine setup
-app.set('views', path.join(`${process.cwd()}/frontend/views`));
+//seta o front na pasta public e adicionar html
+app.use(express.static(path.join(`${process.cwd()}/frontend/public`)));
+app.set('views', path.join(`${process.cwd()}/frontend/public`));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
@@ -16,6 +14,6 @@ app.get('/', (req,res) => {
 	res.render('index')
 })
 
-app.listen(port = 3000, () => {
+app.listen(port, () => {
   console.log(`server started in ${port}`);
 });
