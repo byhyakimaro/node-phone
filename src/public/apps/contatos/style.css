@@ -1,0 +1,91 @@
+.cellphone .main .screens .numbers .contatos-main .header-main {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cellphone .main .screens .numbers .contatos-main .header-main .header-search {
+  width: 100%;
+  margin: 10px;
+  background: #2c2d3a;
+  height: 35px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.cellphone .main .screens .numbers .contatos-main .header-main .header-more {
+  width: 100%;
+  font-size: 10px;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.cellphone .main .screens .numbers .contatos-main .header-main .header-search .icon-menu svg {
+  padding: 5px;
+  fill: #8d8fa0;
+}
+
+.cellphone .main .screens .numbers .contatos-main .header-main .header-search input[name="search-contacts"] {
+  padding: 10px;
+  background: inherit;
+  color: white;
+	width: 185px;
+}
+
+.cellphone .main .screens .numbers .contatos-main .header-main .header-search .icon-more svg {
+  fill: #8d8fa0;
+  padding-top: 5px;
+}
+.cellphone .main .screens .numbers .contatos-main .body-main {
+  width: 100%;
+  height: 465px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow-y: scroll;
+}
+.cellphone .main .screens .numbers .contatos-main .body-main::-webkit-scrollbar {
+  display:none;
+}
+
+.cellphone .main .screens .numbers .contatos-main .body-main .contatos {
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cellphone .main .screens .numbers .contatos-main .body-main .contatos .contato {
+  width: 100%;
+  height: 50px;
+  margin: 5px;
+  display: flex;
+}
+
+.cellphone .main .screens .numbers .contatos-main .body-main .contatos .contato .lt-contato {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3539b6;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.cellphone .main .screens .numbers .contatos-main .body-main .contatos .contato .img-contato {
+  width: 40px;
+  height: 40px;
+  background: #2db34a;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 24px;
+}
+
+.cellphone .main .screens .numbers .contatos-main .body-main .contatos .contato .nome-contato {
+  width: 165px;
+  padding: 10px;
+}
