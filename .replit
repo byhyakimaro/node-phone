@@ -1,0 +1,1 @@
+run = "node backend/src/index.js"

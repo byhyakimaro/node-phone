@@ -4,11 +4,11 @@ var path = require('path');
 const app = express();
 
 // routes
-app.use(express.static('src/public'));
-app.set('views', './views');
+app.use(express.static(`${process.cwd()}/frontend/public`));
+app.set('views', `${process.cwd()}/frontend/public`);
 
 // view engine setup
-app.set('views', path.join(__dirname, 'src/views'));
+app.set('views', path.join(`${process.cwd()}/frontend/views`));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
@@ -16,6 +16,6 @@ app.get('/', (req,res) => {
 	res.render('index')
 })
 
-app.listen(3000, () => {
-  console.log(`server started in ${3000}`);
+app.listen(port = 3000, () => {
+  console.log(`server started in ${port}`);
 });
