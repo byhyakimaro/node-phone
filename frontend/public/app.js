@@ -60,6 +60,13 @@ const main = {
 				style.innerHTML = app.style;
 				div.appendChild(style);
 			};
+
+			if(app.script) {
+				const script = document.createElement('script');
+
+				script.innerHTML = app.script;
+				div.appendChild(script);
+			};
 			$('.screens').appendChild(div);
 
 			setTimeout(() => toggle(div), 1);

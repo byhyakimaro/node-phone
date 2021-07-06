@@ -6,6 +6,7 @@ fs.readdirSync(`${process.cwd()}/frontend/public/apps/`).forEach((element) => {
 		name: element,
 		html: fs.readFileSync(`${process.cwd()}/frontend/public/apps/${element}/index.html`,'utf8'),
 		style: fs.readFileSync(`${process.cwd()}/frontend/public/apps/${element}/style.css`,'utf8'),
+		script: fs.readFileSync(`${process.cwd()}/frontend/public/apps/${element}/script.js`,'utf8')
 	};
 	apps.push(app);
 });
