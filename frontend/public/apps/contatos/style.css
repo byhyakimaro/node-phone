@@ -1,11 +1,15 @@
-.cellphone .main .screens .numbers .contatos-main .header-main {
+.contatos {
+	background: #23242e;
+}
+
+.contatos .contatos-main .header-main {
   width: 100%;
   height: 90px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.cellphone .main .screens .numbers .contatos-main .header-main .header-search {
+.contatos .contatos-main .header-main .header-search {
   width: 100%;
   margin: 10px;
   background: #2c2d3a;
@@ -14,7 +18,7 @@
   display: flex;
 }
 
-.cellphone .main .screens .numbers .contatos-main .header-main .header-more {
+.contatos .contatos-main .header-main .header-more {
   width: 100%;
   font-size: 10px;
   text-align: center;
@@ -22,47 +26,47 @@
   border-bottom: 1px solid gray;
 }
 
-.cellphone .main .screens .numbers .contatos-main .header-main .header-search .icon-menu svg {
+.contatos .contatos-main .header-main .header-search .icon-menu svg {
   padding: 5px;
   fill: #8d8fa0;
 }
 
-.cellphone .main .screens .numbers .contatos-main .header-main .header-search input[name="search-contacts"] {
+.contatos .contatos-main .header-main .header-search input[name="search-contacts"] {
   padding: 10px;
   background: inherit;
   color: white;
 	width: 185px;
 }
 
-.cellphone .main .screens .numbers .contatos-main .header-main .header-search .icon-more svg {
+.contatos .contatos-main .header-main .header-search .icon-more svg {
   fill: #8d8fa0;
   padding-top: 5px;
 }
-.cellphone .main .screens .numbers .contatos-main .body-main {
+.contatos .contatos-main .body-main {
   width: 100%;
   height: 465px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   overflow-y: scroll;
 }
-.cellphone .main .screens .numbers .contatos-main .body-main::-webkit-scrollbar {
+.contatos .contatos-main .body-main::-webkit-scrollbar {
   display:none;
 }
 
-.cellphone .main .screens .numbers .contatos-main .body-main .contatos {
+.contatos .contatos-main .body-main .contatos {
   margin-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.cellphone .main .screens .numbers .contatos-main .body-main .contatos .contato {
+.contatos .contatos-main .body-main .contatos .contato {
   width: 100%;
   height: 50px;
   margin: 5px;
   display: flex;
 }
 
-.cellphone .main .screens .numbers .contatos-main .body-main .contatos .contato .lt-contato {
+.contatos .contatos-main .body-main .contatos .contato .lt-contato {
   width: 40px;
   height: 40px;
   display: flex;
@@ -73,7 +77,7 @@
   padding-right: 10px;
 }
 
-.cellphone .main .screens .numbers .contatos-main .body-main .contatos .contato .img-contato {
+.contatos .contatos-main .body-main .contatos .contato .img-contato {
   width: 40px;
   height: 40px;
   background: #2db34a;
@@ -85,7 +89,7 @@
   font-size: 24px;
 }
 
-.cellphone .main .screens .numbers .contatos-main .body-main .contatos .contato .nome-contato {
+.contatos .contatos-main .body-main .contatos .contato .nome-contato {
   width: 165px;
   padding: 10px;
 }

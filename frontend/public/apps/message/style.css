@@ -1,3 +1,6 @@
+.message {
+	background: #23242e;
+}
 .message .message-main .header-main {
   width: 93%;
   height: 45px;
