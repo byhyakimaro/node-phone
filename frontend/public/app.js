@@ -1,17 +1,12 @@
 let $ = document.querySelector.bind(document);
 
-const socket = io('/');
-socket.on('AppsInstalled', function(apps) {
-	console.log(apps)
-});
+let apps;
 
-const apps = [
-	{
-		name: 'whatsapp',
-		html: `${this.name}/index.html`,
-		style: `${this.name}/style.css` 
-	}
-];
+const socket = io('/');
+
+socket.on('AppsInstalled', function(appsInstalled) {
+	apps = appsInstalled;
+});
 
 const week = ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'];
 
