@@ -1,10 +1,15 @@
 let $ = document.querySelector.bind(document);
 
+const socket = io('/');
+socket.on('AppsInstalled', function(apps) {
+	console.log(apps)
+});
+
 const apps = [
 	{
 		name: 'whatsapp',
 		html: `${this.name}/index.html`,
-		style: `${this.name}/style.css`
+		style: `${this.name}/style.css` 
 	}
 ];
 
