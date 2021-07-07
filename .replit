@@ -1,1 +1,1 @@
-run = "node backend/src/index.js"
+run = "npm run dev"
