@@ -111,6 +111,9 @@ const main = {
 	setWallpapers(wallpaper) {
 		this.element.children[0].style.background = `url('${wallpaper}')`
 	},
+	goHome() {
+		this.openApp('home-screen');
+	},
 	goBack() {
 		if(this.nowApp.dataset.app === 'home-screen') return;
 		
