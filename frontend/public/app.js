@@ -1,11 +1,15 @@
-let $ = document.querySelector.bind(document);
+let $ = document.querySelector.bind(document)
 
-let apps;
+let apps = []
 
-const socket = io('/');
+const socket = io('/')
 
 socket.on('AppsInstalled', function(appsInstalled) {
-	apps = appsInstalled;
+	apps = appsInstalled
+	apps.push({
+		name: 'home-screen', 
+		html: $('.home-screen').innerHTML
+	})
 });
 
 const week = ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'];
@@ -93,6 +97,9 @@ class Phone {
 					};
 				}; 
 			}, 1);
+
+			if(sameApp) return;
+			if(lastApp) this.historyApps.unshift(lastApp.dataset.app);
 		};
 	}
 
