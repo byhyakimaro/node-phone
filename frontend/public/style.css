@@ -20,6 +20,8 @@ body {
 .cellphone {
 	font-family: 'SamsungSans-Regular';
 	position: absolute;
+	bottom: 2rem;
+	right: 5rem;
 	color: white;
 	border-radius: 20px;
   overflow: hidden;
