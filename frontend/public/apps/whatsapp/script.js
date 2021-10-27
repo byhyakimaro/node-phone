@@ -37,13 +37,13 @@ $('.whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .contato').addEv
 	$('.cellphone .main .screens').style.background = "url('https://cdn.discordapp.com/attachments/758616655382577152/834937502703681536/giftly.png')";
 });
 
-const inputText = $('.whatsapp .whatsapp-chat .chat-send .text-chat input');
-const svgIcon = $('.whatsapp .whatsapp-chat .chat-send .button-chat svg path');
-const buttonChat = $('.whatsapp .whatsapp-chat .chat-send .button-chat');
-const chat = $('.whatsapp .whatsapp-chat .chat');
-const sendMessage = 'M4.01 6.03l7.51 3.22-7.52-1 .01-2.22m7.5 8.72L4 17.97v-2.22l7.51-1M2.01 3L2 10l15 2-15 2 .01 7L23 12 2.01 3z';
-const sendAudio = 'M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z';
-let buttonText = false;
+var inputText = $('.whatsapp .whatsapp-chat .chat-send .text-chat input');
+var svgIcon = $('.whatsapp .whatsapp-chat .chat-send .button-chat svg path');
+var buttonChat = $('.whatsapp .whatsapp-chat .chat-send .button-chat');
+var chat = $('.whatsapp .whatsapp-chat .chat');
+var sendMessage = 'M4.01 6.03l7.51 3.22-7.52-1 .01-2.22m7.5 8.72L4 17.97v-2.22l7.51-1M2.01 3L2 10l15 2-15 2 .01 7L23 12 2.01 3z';
+var sendAudio = 'M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z';
+var buttonText = false;
 inputText.addEventListener('keyup', () => {
 	if (inputText.value != '') {
 		svgIcon.setAttribute('d', sendMessage);
@@ -62,12 +62,12 @@ var sanitizeHTML = function (str) {
 };
 
 buttonChat.addEventListener('click', () => {
-	const now = new Date;
-	const hora = now.getHours();
-	const minuto = now.getMinutes();
-	const time = hora + ':' + minuto;
-	const lastMessages = $('.whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .contato .msg');
-	let mensagem =
+	var now = new Date;
+	var hora = now.getHours();
+	var minuto = now.getMinutes();
+	var time = hora + ':' + minuto;
+	var lastMessages = $('.whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .contato .msg');
+	var mensagem =
   `<div class="msg-enviada">
     	<div class="msg">
     	<div class="texto">${sanitizeHTML(inputText.value)}</div>
