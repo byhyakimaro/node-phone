@@ -1,6 +1,6 @@
-let $ = document.querySelector.bind(document)
+const $ = document.querySelector.bind(document)
 
-let apps = [
+const apps = [
 	{
 		name: 'home-screen', 
 		html: `
