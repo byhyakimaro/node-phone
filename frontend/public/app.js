@@ -51,6 +51,7 @@ const monthYear = [
 'outubro',
 'novembro',
 'dezembro'];
+
 class Phone {
 	constructor() {
 		this.element = $('.cellphone')
