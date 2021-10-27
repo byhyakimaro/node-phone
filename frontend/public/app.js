@@ -23,13 +23,20 @@ const monthYear = [
 'outubro',
 'novembro',
 'dezembro'];
+class Phone {
+	constructor() {
+		this.element = $('.cellphone')
+		this.historyApps = []
 
-const main = {
-	element: $('.cellphone'),
-	historyApps: [],
+		this.updateTime();
+		this.loadApp();
+		this.setWallpapers('https://cdn.discordapp.com/attachments/832460992196640829/833132876396101652/FundoIphone2.png');
+	}
+
 	get nowApp() {
 		return $(`.app-screen.active`);
-	},
+	}
+
 	openApp(app) {
 		const lastApp = this.nowApp;
 
@@ -87,8 +94,9 @@ const main = {
 				}; 
 			}, 1);
 		};
-	},
-  updateTime() {
+	}
+
+	updateTime() {
 		var date = new Date;
 
 		var time = date.toLocaleTimeString().split(':');
@@ -102,24 +110,23 @@ const main = {
 		$('.time .hora').innerHTML = time[0];
 		$('.time .minuto').innerHTML = time[1];
 		setTimeout(() => { this.updateTime() }, 1000);
-	},
-	start() {
-		this.updateTime();
-		this.loadApp();
-		this.setWallpapers('https://cdn.discordapp.com/attachments/832460992196640829/833132876396101652/FundoIphone2.png');
-	},
+	}
+
 	setWallpapers(wallpaper) {
 		this.element.children[0].style.background = `url('${wallpaper}')`
-	},
+	}
+
 	goHome() {
 		this.openApp('home-screen');
-	},
+	}
+
 	goBack() {
 		if(this.nowApp.dataset.app === 'home-screen') return;
 		
 		const lastApp = this.historyApps.shift();
 		this.openApp(lastApp);
-	},
+	}
+
 	loadApp() {
 		this.element.onclick = ({ target }) => {
 			const app = target.dataset.app;
@@ -129,6 +136,7 @@ const main = {
       if(button) this[button]();
 		}
 	}
+
 }
 
-main.start();
+const phone = new Phone();
