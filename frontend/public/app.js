@@ -70,6 +70,7 @@ class Phone {
 
 	openApp(app) {
 		const lastApp = this.nowApp;
+		console.log(lastApp)
 
 		if(typeof app === 'string')
 			app = apps.find(({ name }) => name === app.toLowerCase());
@@ -109,32 +110,32 @@ class Phone {
 
 			setTimeout(() => toggle(div), 1);
 			if(app.name === 'home-screen') { app.cache = div };
+			
 			newApp = div;
-
-			const sameApp = newApp === lastApp;
-			setTimeout(() => {
-				if(!sameApp) {
-					toggle(lastApp, false);
-					const mode = newApp.dataset.app !== 'home-screen' ? 'add' : 'remove';		
-
-					if(lastApp) {
-						const lastItem = apps.find(({ name }) => name === lastApp.dataset.app);
-						if(lastItem && lastItem.unload) lastItem.unload(this, lastApp);
-						if(mode === 'remove') setTimeout(() => lastApp.parentElement.removeChild(lastApp), 500);
-					};
-				}; 
-			}, 1);
-
-			if(sameApp) return;
-			if(lastApp) this.historyApps.unshift(lastApp.dataset.app);
 		};
+
+		const sameApp = newApp === lastApp;
+		setTimeout(() => {
+			if(!sameApp) {
+				toggle(lastApp, false);
+				const mode = newApp.dataset.app !== 'home-screen' ? 'add' : 'remove';		
+
+				if(lastApp) {
+					const lastItem = apps.find(({ name }) => name === lastApp.dataset.app);
+					if(lastItem && lastItem.unload) lastItem.unload(this, lastApp);
+					if(mode === 'remove') setTimeout(() => lastApp.parentElement.removeChild(lastApp), 500);
+				};
+			}; 
+		}, 1);
+
+		if(sameApp) return;
+		if(lastApp) this.historyApps.unshift(lastApp.dataset.app);
 	}
 
 	updateTime() {
 		var date = new Date;
 
 		var time = date.toLocaleTimeString().split(':');
-		var year = date.getFullYear();
 		var month = monthYear[date.getMonth()]; // January = 0; February = 1, etc.
 		var day = date.getDate();
 
