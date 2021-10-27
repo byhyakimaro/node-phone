@@ -68,13 +68,11 @@ class Phone {
 
 	openApp(app) {
 		const lastApp = this.nowApp;
-		console.log(lastApp)
 
 		if(typeof app === 'string')
 			app = apps.find(({ name }) => name === app.toLowerCase());
 
 		const toggle = (element, show = true) => {
-			console.log(element,show)
 			if(!element) return;
 			element.classList[show ? 'remove' : 'add']('hidden');
 			element.classList[show ? 'add' : 'remove']('active');
