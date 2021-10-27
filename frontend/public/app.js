@@ -1,14 +1,40 @@
 let $ = document.querySelector.bind(document)
 
-let apps = []
+let apps = [
+	{
+		name: 'home-screen', 
+		html: `
+		<div class="app-screen home-screen active" data-app="home-screen">
+			<div class="apps">
+				<div class="time">
+					<div class="hora">12</div>
+					<div class="minuto">00</div>
+					<div class="data">qua,17 marco</div>
+				</div>
+			</div>
+			<div class="icons">
+				<div class="icon icon-phone">
+					<img data-app="message" src="https://cdn.discordapp.com/attachments/758616655382577152/834931791109554206/messaging.png">
+				</div>
+				<div class="icon icon-contacts">
+					<img data-app="contatos" src="https://cdn.discordapp.com/attachments/758616655382577152/833170257392173076/contacts.png">
+				</div>
+				<div class="icon icon-whatsapp">
+					<img data-app="whatsapp" src="https://cdn.discordapp.com/attachments/758616655382577152/833170261695004682/whatsapp.png">
+				</div>
+				<div class="icon icon-settings">
+					<img src="https://cdn.discordapp.com/attachments/758616655382577152/833170248248983563/settings.png">
+				</div>
+			</div>
+		</div>`
+	}
+]
 
 const socket = io('/')
 
 socket.on('AppsInstalled', function(appsInstalled) {
-	apps = appsInstalled
-	apps.push({
-		name: 'home-screen', 
-		html: $('.home-screen').innerHTML
+	appsInstalled.forEach((element) => {
+		apps.push(element)
 	})
 });
 
@@ -32,6 +58,7 @@ class Phone {
 		this.element = $('.cellphone')
 		this.historyApps = []
 
+		this.openApp('home-screen')
 		this.updateTime();
 		this.loadApp();
 		this.setWallpapers('https://cdn.discordapp.com/attachments/832460992196640829/833132876396101652/FundoIphone2.png');
