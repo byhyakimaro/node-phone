@@ -4,7 +4,6 @@ let apps = [
 	{
 		name: 'home-screen', 
 		html: `
-		<div class="app-screen home-screen active" data-app="home-screen">
 			<div class="apps">
 				<div class="time">
 					<div class="hora">12</div>
@@ -25,8 +24,7 @@ let apps = [
 				<div class="icon icon-settings">
 					<img src="https://cdn.discordapp.com/attachments/758616655382577152/833170248248983563/settings.png">
 				</div>
-			</div>
-		</div>`
+			</div>`
 	}
 ]
 
@@ -76,6 +74,7 @@ class Phone {
 			app = apps.find(({ name }) => name === app.toLowerCase());
 
 		const toggle = (element, show = true) => {
+			console.log(element,show)
 			if(!element) return;
 			element.classList[show ? 'remove' : 'add']('hidden');
 			element.classList[show ? 'add' : 'remove']('active');
