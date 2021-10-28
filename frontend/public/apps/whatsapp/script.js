@@ -155,7 +155,8 @@
 
 class Whatsapp extends Phone {
 	constructor() {
-		this.element = $('.whatsapp')
+		super()
+		this.element = document
 		this.Load()
 	}
 	
@@ -163,7 +164,10 @@ class Whatsapp extends Phone {
 		this.element.onclick = ({ target }) => {
 			console.log(target)
 			const service = target.dataset.service
-			this[service]()
+			try {
+				this[service]()
+			}
+			catch{}
 		}
 	}
 

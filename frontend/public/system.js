@@ -1,4 +1,11 @@
 const $ = document.querySelector.bind(document)
+const socket = io('/')
+
+socket.on('AppsInstalled', function(appsInstalled) {
+	appsInstalled.forEach((element) => {
+		apps.push(element)
+	})
+})
 
 const apps = [
 	{
@@ -28,14 +35,6 @@ const apps = [
 	}
 ]
 
-const socket = io('/')
-
-socket.on('AppsInstalled', function(appsInstalled) {
-	appsInstalled.forEach((element) => {
-		apps.push(element)
-	})
-})
-
 const week = ['Dom','Seg','Ter','Qua','Qui','Sex','Sab']
 
 const monthYear = [
@@ -55,6 +54,7 @@ const monthYear = [
 class Phone {
 	constructor() {
 		this.element = $('.cellphone')
+		this.alreadyOpen = []
 		this.historyApps = []
 
 		this.openApp('home-screen')
@@ -69,6 +69,7 @@ class Phone {
 
 	openApp(app) {
 		const lastApp = this.nowApp
+		const application = app
 
 		if(typeof app === 'string')
 			app = apps.find(({ name }) => name === app.toLowerCase())
@@ -79,7 +80,7 @@ class Phone {
 			element.classList[show ? 'add' : 'remove']('active')
 		}
       
-		let newApp
+		var newApp
       
 		if(app.cache) {
 			toggle(app.cache)
@@ -88,7 +89,7 @@ class Phone {
 			const div = document.createElement('div')
 
 			div.classList.add('app-screen', app.name, 'hidden')
-			div.dataset.app = app.name
+			div.dataset.alreadyOpen = app.name
 			div.innerHTML = app.html
 
 			if(app.style) {
@@ -98,34 +99,34 @@ class Phone {
 				div.appendChild(style)
 			}
 
-			// if(app.script) {
-			// 	const script = document.createElement('script')
-
-			// 	script.innerHTML = app.script
-			// 	div.appendChild(script)
-			// }
+			if(!this.alreadyOpen.includes(application) && app.script) {
+				this.alreadyOpen.push(application)
+				const script = document.createElement('script')
+				script.innerHTML = app.script
+				$('head').appendChild(script)
+			}
 			$('.screens').appendChild(div)
-
+			
 			setTimeout(() => toggle(div), 1)
 			if(app.name === 'home-screen') { app.cache = div }
 			
 			newApp = div
 		}
-
+		
 		const sameApp = newApp === lastApp
 		setTimeout(() => {
 			if(!sameApp) {
 				toggle(lastApp, false)
-				const mode = newApp.dataset.app !== 'home-screen' ? 'add' : 'remove'		
-
+				const mode = newApp.dataset.alreadyOpen !== 'home-screen' ? 'add' : 'remove'		
+				
 				if(lastApp) {
-					const lastItem = apps.find(({ name }) => name === lastApp.dataset.app)
+					const lastItem = apps.find(({ name }) => name === lastApp.dataset.alreadyOpen)
 					if(lastItem && lastItem.unload) lastItem.unload(this, lastApp)
 					if(mode === 'remove') setTimeout(() => lastApp.parentElement.removeChild(lastApp), 500)
 				}
 			} 
 		}, 1)
-
+		
 		if(sameApp) return
 		if(lastApp) this.historyApps.unshift(lastApp.dataset.app)
 	}
