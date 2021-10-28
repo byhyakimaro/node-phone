@@ -1,16 +1,10 @@
-// $('.whatsapp .whatsapp-chat .chat-header .icon-chat').addEventListener('click', () => {
-// 	$('.whatsapp .whatsapp-main').style.display = "block";
-// 	$('.whatsapp .whatsapp-chat').style.display = "none";
-// 	$('.cellphone .main .screens').style.background = "white";
-// });
+// // $('.whatsapp .whatsapp-chat .chat-header .icon-chat').addEventListener('click', () => {
+// // 	$('.whatsapp .whatsapp-main').style.display = "block";
+// // 	$('.whatsapp .whatsapp-chat').style.display = "none";
+// // 	$('.cellphone .main .screens').style.background = "white";
+// // });
 
 // $('.whatsapp .whatsapp-header .whatsapp-status').addEventListener('click', (event) => {
-// 	$('.whatsapp .whatsapp-header .whatsapp-status').style.borderBottom = "4px solid white";
-// 	$('.whatsapp .whatsapp-header .whatsappconversas').style.borderBottom = "0";
-// 	$('.whatsapp .whatsapp-header .whatsapp-chamada').style.borderBottom = "0";
-// 	$('.whatsapp .whatsapp-body .conversas').style.display = "none";
-// 	$('.whatsapp .whatsapp-body .status').style.display = "flex";
-// 	$('.whatsapp .whatsapp-body .chamadas').style.display = "none";
 // });
 
 // $('.whatsapp .whatsapp-header .whatsappconversas').addEventListener('click', (event) => {
@@ -54,6 +48,12 @@
 // 		buttonText = false;
 // 	}
 // });
+
+// function sanitizeHTML (str) {
+// 	return str.replace(/[^\w. ]/gi, function (c) {
+// 		return '&#' + c.charCodeAt(0) + ';';
+// 	})
+// }
 
 // buttonChat.addEventListener('click', () => {
 // 	var now = new Date;
@@ -155,12 +155,32 @@
 
 class Whatsapp extends Phone {
 	constructor() {
-		console.log("OK")
+		this.element = $('.whatsapp')
+		this.Load()
+	}
+	
+	Load() {
+		this.element.onclick = ({ target }) => {
+			console.log(target)
+			const service = target.dataset.service
+			this[service]()
+		}
 	}
 
-	sanitizeHTML (str) {
+	Status() {
+		$('.whatsapp .whatsapp-header .whatsapp-status').style.borderBottom = "4px solid white";
+		$('.whatsapp .whatsapp-header .whatsappconversas').style.borderBottom = "0";
+		$('.whatsapp .whatsapp-header .whatsapp-chamada').style.borderBottom = "0";
+		$('.whatsapp .whatsapp-body .conversas').style.display = "none";
+		$('.whatsapp .whatsapp-body .status').style.display = "flex";
+		$('.whatsapp .whatsapp-body .chamadas').style.display = "none";
+	}
+
+	sanitizeText (str) {
 		return str.replace(/[^\w. ]/gi, function (c) {
 			return '&#' + c.charCodeAt(0) + ';';
 		})
 	}
 }
+
+const whatsapp = new Whatsapp()
