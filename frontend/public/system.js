@@ -128,7 +128,7 @@ class Phone {
 		}, 1)
 		
 		if(sameApp) return
-		if(lastApp) this.historyApps.unshift(lastApp.dataset.app)
+		if(lastApp) this.historyApps.unshift(lastApp.dataset.alreadyOpen)
 	}
 
 	updateTime() {
@@ -156,9 +156,8 @@ class Phone {
 
 	goBack() {
 		if(this.nowApp.dataset.alreadyOpen === 'home-screen') return
-		
 		const lastApp = this.historyApps.shift()
-		this.openApp(lastApp)
+		lastApp ? this.openApp(lastApp) : this.openApp('home-screen')
 	}
 
 	loadApp() {
