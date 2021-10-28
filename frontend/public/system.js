@@ -129,6 +129,7 @@ class Phone {
 		
 		if(sameApp) return
 		if(lastApp) this.historyApps.unshift(lastApp.dataset.alreadyOpen)
+		console.log(this.historyApps)
 	}
 
 	updateTime() {
