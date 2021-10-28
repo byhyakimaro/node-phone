@@ -155,7 +155,7 @@ class Phone {
 	}
 
 	goBack() {
-		if(this.nowApp.dataset.app === 'home-screen') return
+		if(this.nowApp.dataset.alreadyOpen === 'home-screen') return
 		
 		const lastApp = this.historyApps.shift()
 		this.openApp(lastApp)

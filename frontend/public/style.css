@@ -139,9 +139,13 @@ body {
 	bottom: 5px;
 }
 .cellphone .screen .bottom-buttons .left, .center, .right {
-	margin-top: 10px;
+	margin: 4px;
 	height: 17px;
 	width: 17px;
 	padding: 0 27px;
 	cursor: pointer;
+}
+
+.cellphone .screen .bottom-buttons .left:active, .center:active, .right:active {
+	background: #d9dbdc;
 }
