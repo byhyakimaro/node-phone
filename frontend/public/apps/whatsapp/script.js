@@ -162,7 +162,6 @@ class Whatsapp extends Phone {
 	
 	Load() {
 		this.element.onclick = ({ target }) => {
-			console.log(target)
 			const service = target.dataset.service
 			try {
 				this[service]()
