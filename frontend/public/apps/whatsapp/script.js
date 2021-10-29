@@ -147,7 +147,6 @@ class Whatsapp {
 	
 	Load() {
 		this.element.onclick = ({ target }) => {
-			console.log(target)
 			const service = target.dataset.service
 			try {
 				this[service]()
@@ -186,7 +185,7 @@ class Whatsapp {
 	Contato() {
 		$('.whatsapp .whatsapp-main').style.display = "none";
 		$('.whatsapp .whatsapp-chat').style.display = "block";
-		$('.cellphone .main .screens').style.background = "url('https://cdn.discordapp.com/attachments/758616655382577152/834937502703681536/giftly.png')";
+		$('.whatsapp').style.background = "url('https://cdn.discordapp.com/attachments/758616655382577152/834937502703681536/giftly.png')";
 	}
 
 	sanitizeText (str) {

@@ -10,7 +10,7 @@ socket.on('AppsInstalled', function(appsInstalled) {
 const apps = [getAppsSystem()]
 class Phone {
 	constructor() {
-		this.element = $('.cellphone')
+		this.element = $('.phone')
 		this.recentApps = []
 
 		this.hours = data.toLocaleTimeString()
@@ -19,7 +19,7 @@ class Phone {
 		this.month = monthYear[data.getMonth()]
 		this.year = data.getFullYear()
 		
-		this.loadApp()
+		this.loadEvents()
 		this.openApp('home')
 		this.updateTime()
 		this.setWallpapers('https://cdn.discordapp.com/attachments/832460992196640829/833132876396101652/FundoIphone2.png')
@@ -41,7 +41,7 @@ class Phone {
 		return $(`.app-screen.active`)
 	}
 
-	loadApp() {
+	loadEvents() {
 		this.element.onclick = ({ target }) => {
 			const app = target.dataset.app
 			if(app) this.openApp(app)
