@@ -35,8 +35,8 @@ const apps = [
 	}
 ]
 
+const data = new Date
 const week = ['Dom','Seg','Ter','Qua','Qui','Sex','Sab']
-
 const monthYear = [
 'janeiro',
 'fevereiro',
@@ -49,17 +49,24 @@ const monthYear = [
 'setembro',
 'outubro',
 'novembro',
-'dezembro']
+'dezembro'
+]
 
 class Phone {
 	constructor() {
 		this.element = $('.cellphone')
-		this.alreadyOpen = []
-		this.historyApps = []
+		this.recentApps = []
+		this.logOpen = []
 
+		this.hours = data.toLocaleTimeString()
+		this.day = data.getDate()
+		this.dayOfWeek = week[data.getDay()]
+		this.month = monthYear[data.getMonth()]
+		this.year = data.getFullYear()
+
+		this.loadApp()
 		this.openApp('home-screen')
 		this.updateTime()
-		this.loadApp()
 		this.setWallpapers('https://cdn.discordapp.com/attachments/832460992196640829/833132876396101652/FundoIphone2.png')
 	}
 
@@ -69,17 +76,14 @@ class Phone {
 
 	openApp(app) {
 		const lastApp = this.nowApp
-		const application = app
-
-		if(typeof app === 'string')
-			app = apps.find(({ name }) => name === app.toLowerCase())
-
+		if(typeof app === 'string') app = apps.find(({ name }) => name === app.toLowerCase())
+		if(!app) throw new Error('Application not found')
+	
 		const toggle = (element, show = true) => {
 			if(!element) return
 			element.classList[show ? 'remove' : 'add']('hidden')
 			element.classList[show ? 'add' : 'remove']('active')
 		}
-      
 		var newApp
       
 		if(app.cache) {
@@ -94,17 +98,18 @@ class Phone {
 
 			if(app.style) {
 				const style = document.createElement('style')
-
 				style.innerHTML = app.style
 				div.appendChild(style)
 			}
 
-			if(!this.alreadyOpen.includes(application) && app.script) {
-				this.alreadyOpen.push(application)
+			if(app.script && !this.logOpen.includes(app.name)) {
+				console.log(this.logOpen, app.name)
+				this.logOpen.unshift(app.name)
 				const script = document.createElement('script')
 				script.innerHTML = app.script
 				$('head').appendChild(script)
 			}
+			console.log(this.logOpen, app.name)
 			$('.screens').appendChild(div)
 			
 			setTimeout(() => toggle(div), 1)
@@ -128,18 +133,15 @@ class Phone {
 		}, 1)
 		
 		if(sameApp) return
-		if(lastApp) this.historyApps.unshift(lastApp.dataset.alreadyOpen)
-		console.log(this.historyApps)
+		if(lastApp) this.recentApps.unshift(lastApp.dataset.alreadyOpen)
 	}
 
 	updateTime() {
-		var date = new Date
+		var time = this.hours.split(':')
+		var month = this.month
+		var day = this.day
+		var dayOfWeek =  this.dayOfWeek
 
-		var time = date.toLocaleTimeString().split(':')
-		var month = monthYear[date.getMonth()] // January = 0 February = 1, etc.
-		var day = date.getDate()
-
-		var dayOfWeek = week[date.getDay()] // Sunday = 0, Monday = 1, etc.
 		$('.time .data').innerHTML = `${dayOfWeek},${day} de ${month}`
 		$('.horario').innerHTML = `${time[0]}:${time[1]}`
 		$('.time .hora').innerHTML = time[0]
@@ -157,7 +159,7 @@ class Phone {
 
 	goBack() {
 		if(this.nowApp.dataset.alreadyOpen === 'home-screen') return
-		const lastApp = this.historyApps.shift()
+		const lastApp = this.recentApps.shift()
 		lastApp ? this.openApp(lastApp) : this.openApp('home-screen')
 	}
 
