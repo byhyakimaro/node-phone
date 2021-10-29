@@ -1,6 +1,7 @@
-import { $, data, week, monthYear, getAppsSystem } from './api/setSystem.js'
-
+import { data, week, monthYear, getAppsSystem } from './api/setSystem.js'
+const $ = document.querySelector.bind(document)
 const socket = io('/')
+
 socket.on('AppsInstalled', function(appsInstalled) {
 	appsInstalled.forEach((element) => {
 		apps.push(element)
@@ -13,7 +14,7 @@ class Phone {
 		this.element = $('.cellphone')
 		this.recentApps = []
 		this.logOpen = []
-		
+
 		this.hours = data.toLocaleTimeString()
 		this.day = data.getDate()
 		this.dayOfWeek = week[data.getDay()]
@@ -29,7 +30,7 @@ class Phone {
 	setWallpapers(wallpaper) {
 		this.element.children[0].style.background = `url('${wallpaper}')`
 	}
-	
+
 	updateTime() {
 		$('.time .data').innerHTML = `${this.dayOfWeek},${this.day} de ${this.month}`
 		$('.horario').innerHTML = `${this.hours.split(':')[0]}:${this.hours.split(':')[1]}`
@@ -37,33 +38,33 @@ class Phone {
 		$('.time .minuto').innerHTML = this.hours.split(':')[1]
 		setTimeout(() => { this.updateTime() }, 1000)
 	}
-	
+
 	get nowApp() {
 		return $(`.app-screen.active`)
 	}
-	
+
 	loadApp() {
 		this.element.onclick = ({ target }) => {
 			const app = target.dataset.app
 			if(app) this.openApp(app)
-			
+
 			const button = target.dataset.button
 			if(button) this[button]()
 		}
 	}
-	
+
 	openApp(app) {
 		const lastApp = this.nowApp
 		app = apps.find(({ name }) => name === app.toLowerCase())
 		if(!app) throw new Error('Application not found')
-		
+	
 		const toggle = (element, show = true) => {
 			if(!element) return
 			element.classList[show ? 'remove' : 'add']('hidden')
 			element.classList[show ? 'add' : 'remove']('active')
 		}
 		var newApp
-		
+      
 		if(app.cache) {
 			toggle(app.cache)
 			newApp = app.cache
@@ -72,13 +73,13 @@ class Phone {
 			div.classList.add('app-screen', app.name, 'hidden')
 			div.dataset.alreadyOpen = app.name
 			div.innerHTML = app.html
-			
+
 			if(app.style) {
 				const style = document.createElement('style')
 				style.innerHTML = app.style
 				div.appendChild(style)
 			}
-			
+
 			$('.screens').appendChild(div)
 			this.logOpen.includes(app.name) ? app.script = null : this.logOpen.unshift(app.name)
 			if(app.script) {
@@ -110,15 +111,15 @@ class Phone {
 		if(sameApp) return
 		if(lastApp) this.recentApps.unshift(lastApp.dataset.alreadyOpen)
 	}
-	
+
 	goRecent() {
-		
+
 	}
-	
+
 	goHome() {
 		this.openApp('home')
 	}
-	
+
 	goBack() {
 		if(this.nowApp.dataset.alreadyOpen === 'home') return
 		const lastApp = this.recentApps.shift()

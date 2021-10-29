@@ -1,4 +1,3 @@
-const $ = document.querySelector.bind(document)
 const data = new Date
 const week = ['Dom','Seg','Ter','Qua','Qui','Sex','Sab']
 const monthYear = [
@@ -50,4 +49,4 @@ const getAppsSystem = () => {
   }
 }
 
-export { $, data, week, monthYear, getAppsSystem }
+export { data, week, monthYear, getAppsSystem }
