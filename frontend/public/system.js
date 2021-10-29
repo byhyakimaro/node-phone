@@ -9,7 +9,7 @@ socket.on('AppsInstalled', function(appsInstalled) {
 
 const apps = [
 	{
-		name: 'home-screen', 
+		name: 'home', 
 		html: `
 			<div class="apps">
 				<div class="time">
@@ -63,20 +63,42 @@ class Phone {
 		this.dayOfWeek = week[data.getDay()]
 		this.month = monthYear[data.getMonth()]
 		this.year = data.getFullYear()
-
+		
 		this.loadApp()
-		this.openApp('home-screen')
+		this.openApp('home')
 		this.updateTime()
 		this.setWallpapers('https://cdn.discordapp.com/attachments/832460992196640829/833132876396101652/FundoIphone2.png')
+	}
+	
+	setWallpapers(wallpaper) {
+		this.element.children[0].style.background = `url('${wallpaper}')`
+	}
+
+	updateTime() {
+		$('.time .data').innerHTML = `${this.dayOfWeek},${this.day} de ${this.month}`
+		$('.horario').innerHTML = `${this.hours.split(':')[0]}:${this.hours.split(':')[1]}`
+		$('.time .hora').innerHTML = this.hours.split(':')[0]
+		$('.time .minuto').innerHTML = this.hours.split(':')[1]
+		setTimeout(() => { this.updateTime() }, 1000)
 	}
 
 	get nowApp() {
 		return $(`.app-screen.active`)
 	}
 
+	loadApp() {
+		this.element.onclick = ({ target }) => {
+			const app = target.dataset.app
+			if(app) this.openApp(app)
+
+			const button = target.dataset.button
+			if(button) this[button]()
+		}
+	}
+
 	openApp(app) {
 		const lastApp = this.nowApp
-		if(typeof app === 'string') app = apps.find(({ name }) => name === app.toLowerCase())
+		app = apps.find(({ name }) => name === app.toLowerCase())
 		if(!app) throw new Error('Application not found')
 	
 		const toggle = (element, show = true) => {
@@ -91,7 +113,6 @@ class Phone {
 			newApp = app.cache
 		} else {
 			const div = document.createElement('div')
-
 			div.classList.add('app-screen', app.name, 'hidden')
 			div.dataset.alreadyOpen = app.name
 			div.innerHTML = app.html
@@ -102,18 +123,16 @@ class Phone {
 				div.appendChild(style)
 			}
 
-			if(app.script && !this.logOpen.includes(app.name)) {
-				console.log(this.logOpen, app.name)
-				this.logOpen.unshift(app.name)
+			$('.screens').appendChild(div)
+			this.logOpen.includes(app.name) ? app.script = null : this.logOpen.unshift(app.name)
+			if(app.script) {
 				const script = document.createElement('script')
 				script.innerHTML = app.script
 				$('head').appendChild(script)
 			}
-			console.log(this.logOpen, app.name)
-			$('.screens').appendChild(div)
 			
 			setTimeout(() => toggle(div), 1)
-			if(app.name === 'home-screen') { app.cache = div }
+			if(app.name === 'home') { app.cache = div }
 			
 			newApp = div
 		}
@@ -122,7 +141,7 @@ class Phone {
 		setTimeout(() => {
 			if(!sameApp) {
 				toggle(lastApp, false)
-				const mode = newApp.dataset.alreadyOpen !== 'home-screen' ? 'add' : 'remove'		
+				const mode = newApp.dataset.alreadyOpen !== 'home' ? 'add' : 'remove'		
 				
 				if(lastApp) {
 					const lastItem = apps.find(({ name }) => name === lastApp.dataset.alreadyOpen)
@@ -136,43 +155,19 @@ class Phone {
 		if(lastApp) this.recentApps.unshift(lastApp.dataset.alreadyOpen)
 	}
 
-	updateTime() {
-		var time = this.hours.split(':')
-		var month = this.month
-		var day = this.day
-		var dayOfWeek =  this.dayOfWeek
+	goRecent() {
 
-		$('.time .data').innerHTML = `${dayOfWeek},${day} de ${month}`
-		$('.horario').innerHTML = `${time[0]}:${time[1]}`
-		$('.time .hora').innerHTML = time[0]
-		$('.time .minuto').innerHTML = time[1]
-		setTimeout(() => { this.updateTime() }, 1000)
-	}
-
-	setWallpapers(wallpaper) {
-		this.element.children[0].style.background = `url('${wallpaper}')`
 	}
 
 	goHome() {
-		this.openApp('home-screen')
+		this.openApp('home')
 	}
 
 	goBack() {
-		if(this.nowApp.dataset.alreadyOpen === 'home-screen') return
+		if(this.nowApp.dataset.alreadyOpen === 'home') return
 		const lastApp = this.recentApps.shift()
-		lastApp ? this.openApp(lastApp) : this.openApp('home-screen')
+		lastApp ? this.openApp(lastApp) : this.openApp('home')
 	}
-
-	loadApp() {
-		this.element.onclick = ({ target }) => {
-			const app = target.dataset.app
-			if(app) this.openApp(app)
-
-			const button = target.dataset.button
-      if(button) this[button]()
-		}
-	}
-
 }
 
 const phone = new Phone()
