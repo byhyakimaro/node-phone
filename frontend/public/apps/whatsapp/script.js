@@ -8,27 +8,12 @@
 // });
 
 // $('.whatsapp .whatsapp-header .whatsappconversas').addEventListener('click', (event) => {
-// 	$('.whatsapp .whatsapp-header .whatsapp-status').style.borderBottom = "0";
-// 	$('.whatsapp .whatsapp-header .whatsappconversas').style.borderBottom = "4px solid white";
-// 	$('.whatsapp .whatsapp-header .whatsapp-chamada').style.borderBottom = "0";
-// 	$('.whatsapp .whatsapp-body .conversas').style.display = "flex";
-// 	$('.whatsapp .whatsapp-body .status').style.display = "none";
-// 	$('.whatsapp .whatsapp-body .chamadas').style.display = "none";
 // });
 
 // $('.whatsapp .whatsapp-header .whatsapp-chamada').addEventListener('click', (event) => {
-// 	$('.whatsapp .whatsapp-header .whatsapp-status').style.borderBottom = "0";
-// 	$('.whatsapp .whatsapp-header .whatsappconversas').style.borderBottom = "0";
-// 	$('.whatsapp .whatsapp-header .whatsapp-chamada').style.borderBottom = "4px solid white";
-// 	$('.whatsapp .whatsapp-body .conversas').style.display = "none";
-// 	$('.whatsapp .whatsapp-body .status').style.display = "none";
-// 	$('.whatsapp .whatsapp-body .chamadas').style.display = "flex";
 // });
 
 // $('.whatsapp .whatsapp-main .whatsapp-body .conversas .conversa .contato').addEventListener('click' , (event) => {
-// 	$('.whatsapp .whatsapp-main').style.display = "none";
-// 	$('.whatsapp .whatsapp-chat').style.display = "block";
-// 	$('.cellphone .main .screens').style.background = "url('https://cdn.discordapp.com/attachments/758616655382577152/834937502703681536/giftly.png')";
 // });
 
 // var inputText = $('.whatsapp .whatsapp-chat .chat-send .text-chat input');
@@ -152,10 +137,11 @@
 // 	$('.buttons-top').style.background = "rgb(15 88 79)";
 // });
 
-import { data, week, monthYear, getAppsSystem, $ } from '../../api/setSystem.js'
+import { $ } from '../../api/setSystem.js'
 class Whatsapp {
 	constructor() {
 		this.element = $('.whatsapp')
+		this.historyScreen = []
 		this.Load()
 	}
 	
@@ -170,6 +156,24 @@ class Whatsapp {
 		}
 	}
 
+	Conversas() {
+		$('.whatsapp .whatsapp-header .whatsapp-status').style.borderBottom = "0";
+		$('.whatsapp .whatsapp-header .whatsappconversas').style.borderBottom = "4px solid white";
+		$('.whatsapp .whatsapp-header .whatsapp-chamada').style.borderBottom = "0";
+		$('.whatsapp .whatsapp-body .conversas').style.display = "flex";
+		$('.whatsapp .whatsapp-body .status').style.display = "none";
+		$('.whatsapp .whatsapp-body .chamadas').style.display = "none";
+	}
+
+	Chamada() {
+		$('.whatsapp .whatsapp-header .whatsapp-status').style.borderBottom = "0";
+		$('.whatsapp .whatsapp-header .whatsappconversas').style.borderBottom = "0";
+		$('.whatsapp .whatsapp-header .whatsapp-chamada').style.borderBottom = "4px solid white";
+		$('.whatsapp .whatsapp-body .conversas').style.display = "none";
+		$('.whatsapp .whatsapp-body .status').style.display = "none";
+		$('.whatsapp .whatsapp-body .chamadas').style.display = "flex";
+	}
+
 	Status() {
 		$('.whatsapp .whatsapp-header .whatsapp-status').style.borderBottom = "4px solid white";
 		$('.whatsapp .whatsapp-header .whatsappconversas').style.borderBottom = "0";
@@ -177,6 +181,12 @@ class Whatsapp {
 		$('.whatsapp .whatsapp-body .conversas').style.display = "none";
 		$('.whatsapp .whatsapp-body .status').style.display = "flex";
 		$('.whatsapp .whatsapp-body .chamadas').style.display = "none";
+	}
+
+	Contato() {
+		$('.whatsapp .whatsapp-main').style.display = "none";
+		$('.whatsapp .whatsapp-chat').style.display = "block";
+		$('.cellphone .main .screens').style.background = "url('https://cdn.discordapp.com/attachments/758616655382577152/834937502703681536/giftly.png')";
 	}
 
 	sanitizeText (str) {

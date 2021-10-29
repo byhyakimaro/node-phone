@@ -114,6 +114,7 @@ body {
 	margin-left: -10px;
 }
 .cellphone .screen .screens .app-screen .icons {
+	cursor: pointer;
 	display: flex;
 	flex-wrap: wrap;
   width: 90%;
@@ -122,9 +123,12 @@ body {
   bottom: 80px;
 }
 .cellphone .screen .screens .app-screen .icons .icon {
-  width: 43px;
+	width: 43px;
   height: 43px;
   padding: 5px 10px;
+}
+.cellphone .screen .screens .app-screen .icons .icon:hover {
+	transform: scale(1.05);
 }
 .cellphone .screen .bottom-buttons {
 	background: rgb(4 4 4 / 20%);
@@ -142,10 +146,11 @@ body {
 	margin: 4px;
 	height: 17px;
 	width: 17px;
-	padding: 0 27px;
+	padding: 2px 27px;
 	cursor: pointer;
 }
 
 .cellphone .screen .bottom-buttons .left:active, .center:active, .right:active {
-	background: #d9dbdc;
+	border-radius: 20px;
+	background: rgba(255, 255, 255, 0.5)
 }
