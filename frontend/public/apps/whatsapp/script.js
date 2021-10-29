@@ -152,16 +152,16 @@
 // 	$('.buttons-top').style.background = "rgb(15 88 79)";
 // });
 
-
-class Whatsapp extends Phone {
+import { data, week, monthYear, getAppsSystem, $ } from '../../api/setSystem.js'
+class Whatsapp {
 	constructor() {
-		super()
-		this.element = document
+		this.element = $('.whatsapp')
 		this.Load()
 	}
 	
 	Load() {
 		this.element.onclick = ({ target }) => {
+			console.log(target)
 			const service = target.dataset.service
 			try {
 				this[service]()

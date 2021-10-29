@@ -49,4 +49,10 @@ const getAppsSystem = () => {
   }
 }
 
-export { data, week, monthYear, getAppsSystem }
+function $(param) {
+  if (typeof param == 'string'|| param instanceof String) {
+    return document.querySelector(param);
+  }
+}
+
+export { data, week, monthYear, getAppsSystem, $ }

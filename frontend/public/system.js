@@ -1,5 +1,4 @@
-import { data, week, monthYear, getAppsSystem } from './api/setSystem.js'
-const $ = document.querySelector.bind(document)
+import { data, week, monthYear, getAppsSystem, $ } from './api/setSystem.js'
 const socket = io('/')
 
 socket.on('AppsInstalled', function(appsInstalled) {
@@ -13,7 +12,6 @@ class Phone {
 	constructor() {
 		this.element = $('.cellphone')
 		this.recentApps = []
-		this.logOpen = []
 
 		this.hours = data.toLocaleTimeString()
 		this.day = data.getDate()
@@ -81,11 +79,11 @@ class Phone {
 			}
 
 			$('.screens').appendChild(div)
-			this.logOpen.includes(app.name) ? app.script = null : this.logOpen.unshift(app.name)
 			if(app.script) {
 				const script = document.createElement('script')
 				script.innerHTML = app.script
-				$('head').appendChild(script)
+				script.setAttribute('type','module')
+				div.appendChild(script)
 			}
 			
 			setTimeout(() => toggle(div), 1)
