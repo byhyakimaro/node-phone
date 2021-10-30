@@ -20,7 +20,7 @@ const appsSystem = [
   name: 'home', 
   html: `
     <div class="home-list">
-      <div class="home-item">
+      <div class="home-item active" data-i="0">
         <div class="time-width">
           <div class="time">
             <div class="hora">12</div>
@@ -35,16 +35,16 @@ const appsSystem = [
           <div class="icon icon-contacts">
             <img data-app="contatos" src="https://cdn.discordapp.com/attachments/758616655382577152/833170257392173076/contacts.png">
           </div>
+          <div class="icon icon-internet">
+            <img data-app="internet" src="https://media.discordapp.net/attachments/758616655382577152/903814452217012304/internet.png">
+          </div>
           <div class="icon icon-whatsapp">
             <img data-app="whatsapp" src="https://cdn.discordapp.com/attachments/758616655382577152/833170261695004682/whatsapp.png">
           </div>
-          <div class="icon icon-settings">
-            <img src="https://cdn.discordapp.com/attachments/758616655382577152/833170248248983563/settings.png">
-          </div>
         </div>
       </div>
-      <div class="home-item"></div>
-      <div class="home-item"></div>
+      <div class="home-item" data-i="1"></div>
+      <div class="home-item" data-i="2"></div>
     </div>
     `,
     style: `
@@ -85,11 +85,12 @@ const appsSystem = [
       width: 90%;
       justify-content: center;
       position: absolute;
-      bottom: 80px;
+      bottom: 55px;
+    }
+    .icons .icon img {
+      width: 43px;
     }
     .icons .icon {
-      width: 43px;
-      height: 43px;
       padding: 5px 10px;
     }
     .icons .icon:hover {
