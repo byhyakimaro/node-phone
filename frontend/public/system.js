@@ -19,8 +19,8 @@ class Phone {
 		this.month = monthYear[data.getMonth()]
 		this.year = data.getFullYear()
 		
-		this.loadEvents()
 		this.openApp('home')
+		this.loadEvents()
 		this.updateTime()
 		this.setWallpapers('https://cdn.discordapp.com/attachments/832460992196640829/833132876396101652/FundoIphone2.png')
 	}
@@ -49,6 +49,74 @@ class Phone {
 			const button = target.dataset.button
 			if(button) this[button]()
 		}
+
+		const homeList = $('.home-list');
+      
+		let homeDown, current, startX = 0, currentX = 0;
+      
+		homeList.onmousedown = document.onmouseup = ({ target, type, clientX }) => {
+			current = $('.home-item.active');
+													
+			if(type === 'mousedown') {
+				if(homeDown) return;
+			
+				if(!target.classList.contains('home-item')) return;
+
+				homeDown = true;
+				homeList.style.transition = 'transform .05s';
+				document.body.classList.add('grabbing');
+			
+				startX = clientX - currentX;
+			} else {
+				if(!homeDown) return;
+			
+				homeDown = false;
+				homeList.style.transition = 'transform .3s';
+				document.body.classList.remove('grabbing');
+			
+				const { width } = current.getBoundingClientRect();
+				
+				const currentI = parseInt(current.dataset.i);
+				const apply = -Math.round((currentX + (currentI * width)) / width);
+				const screenLength = homeList.children.length -1;
+			
+				let nextI = currentI + apply, newX = 0;
+										
+				if(nextI < 0) nextI = 0;
+				if(nextI > screenLength) nextI = screenLength;
+										
+				const next = $(`.home-item[data-i="${nextI}"]`);
+										
+				if(apply && next) {
+					current.classList.remove('active');
+					next.classList.add('active');
+				
+					const nextI = parseInt(next.dataset.i);
+					const screenList = $('.home-screens-list');
+				
+					// const lastItem = document.querySelector(`.screen-item.active`);
+					// const newItem = document.querySelector(`.screen-item[data-i="${nextI}"]`);
+
+					// lastItem.classList.remove('active');
+					// newItem.classList.add('active');
+				
+					newX = - nextI * width;
+				} else {
+					newX = - currentI * width;
+				};
+			
+				homeList.style.transform = `translateX(${newX}px)`;
+				currentX = newX;
+			};
+		};
+	
+		document.onmousemove = ({ clientX: x, clientY: y }) => {
+			if(!homeDown) return;
+		
+			currentX = x - startX;
+		
+			homeList.style.transform = `translateX(${currentX}px)`;
+		};
 	}
 
 	openApp(app) {
