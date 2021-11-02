@@ -190,7 +190,6 @@ class Phone {
 	}
 
 	goRecent() {
-		console.log(apps)
 		this.openApp('recent')
 	}
 
