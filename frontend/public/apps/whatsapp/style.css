@@ -1,11 +1,13 @@
-.top-bar {
-  background: rgba(11,97,86,1) !important;
+.whatsapp .loading-screen {
+  background: #21282e;
+  z-index: 3;
+  transition: opacity .3s;
 }
 .whatsapp {
-  width: 100%;
 	background: white;
 }
 .whatsapp .whatsapp-main .whatsapp-header {
+  padding-top: 1.78rem;
   width: 100%;
   background: rgba(11,97,86,1);
   height: 80px;

@@ -174,6 +174,10 @@ class Phone {
 			} 
 		}, 1)
 		
+		setTimeout(() => {
+			$('.loading-screen', app).classList.add('hide');
+		}, (1 + Math.floor(Math.random() * 1.5)) * 1000);
+
 		if(sameApp) return
 		if(lastApp) this.recentApps.unshift(lastApp.dataset.alreadyOpen)
 	}
