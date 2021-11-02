@@ -1,8 +1,8 @@
 .internet .loading-screen {
-  background: #21282e;
+  background: white;
   z-index: 3;
   transition: opacity .3s;
 }
 .internet {
-	background: white;
+	background: #ccc;
 }
