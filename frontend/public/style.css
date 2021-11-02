@@ -14,6 +14,10 @@
 .hidden {
 	display: none !important;
 }
+.hide {
+	display: none;
+	pointer-events: none;
+}
 .phone {
 	font-family: 'SamsungSans-Regular';
 	position: absolute;
@@ -116,9 +120,4 @@
 .phone .screen-phone .bottom-buttons .left:active, .center:active, .right:active {
 	border-radius: 20px;
 	background: rgba(255, 255, 255, 0.5)
-}
-.hide {
-	display: none;
-	opacity: 0;
-	pointer-events: none;
 }
