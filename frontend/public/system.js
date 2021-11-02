@@ -176,6 +176,7 @@ class Phone {
 		
 		setTimeout(() => {
 			$('.loading-screen', app).classList.add('hide');
+			$('.content-screen', app).classList.remove('hide');
 		}, (1 + Math.floor(Math.random() * 1.5)) * 1000);
 
 		if(sameApp) return
