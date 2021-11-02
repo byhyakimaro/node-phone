@@ -28,23 +28,23 @@ const appsSystem = [
             <div class="data">qua,17 marco</div>
           </div>
         </div>
-        <div class="icons">
-          <div class="icon icon-phone">
-            <img data-app="message" src="https://cdn.discordapp.com/attachments/758616655382577152/834931791109554206/messaging.png">
-          </div>
-          <div class="icon icon-contacts">
-            <img data-app="contatos" src="https://cdn.discordapp.com/attachments/758616655382577152/833170257392173076/contacts.png">
-          </div>
-          <div class="icon icon-internet">
-            <img data-app="internet" src="https://media.discordapp.net/attachments/758616655382577152/903814452217012304/internet.png">
-          </div>
-          <div class="icon icon-whatsapp">
-            <img data-app="whatsapp" src="https://cdn.discordapp.com/attachments/758616655382577152/833170261695004682/whatsapp.png">
-          </div>
-        </div>
       </div>
       <div class="home-item" data-i="1"></div>
       <div class="home-item" data-i="2"></div>
+    </div>
+    <div class="icons-bottom">
+      <div class="icon icon-phone">
+        <img data-app="message" src="https://cdn.discordapp.com/attachments/758616655382577152/834931791109554206/messaging.png">
+      </div>
+      <div class="icon icon-contacts">
+        <img data-app="contatos" src="https://cdn.discordapp.com/attachments/758616655382577152/833170257392173076/contacts.png">
+      </div>
+      <div class="icon icon-internet">
+        <img data-app="internet" src="https://media.discordapp.net/attachments/758616655382577152/903814452217012304/internet.png">
+      </div>
+      <div class="icon icon-whatsapp">
+        <img data-app="whatsapp" src="https://cdn.discordapp.com/attachments/758616655382577152/833170261695004682/whatsapp.png">
+      </div>
     </div>
     `,
     style: `
@@ -78,7 +78,7 @@ const appsSystem = [
     .time-width .time .data {
       font-size: 13px;
     }
-    .icons {
+    .icons-bottom {
       cursor: pointer;
       display: flex;
       flex-wrap: wrap;
@@ -87,13 +87,13 @@ const appsSystem = [
       position: absolute;
       bottom: 55px;
     }
-    .icons .icon img {
+    .icons-bottom .icon img {
       width: 43px;
     }
-    .icons .icon {
+    .icons-bottom .icon {
       padding: 5px 10px;
     }
-    .icons .icon:hover {
+    .icons-bottom .icon:hover {
       transform: scale(1.05);
     }
     `,
