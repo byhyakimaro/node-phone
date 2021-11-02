@@ -97,6 +97,11 @@ const appsSystem = [
       transform: scale(1.05);
     }
     `,
+},
+{
+  name: 'recent',
+  html: '<div></div>',
+  style: '',
 }
 ]
 

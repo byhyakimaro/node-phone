@@ -175,8 +175,10 @@ class Phone {
 		}, 1)
 		
 		setTimeout(() => {
-			$('.loading-screen', app).classList.add('hide');
-			$('.content-screen', app).classList.remove('hide');
+			try {
+				$('.loading-screen', app).classList.add('hide');
+				$('.content-screen', app).classList.remove('hide');
+			} catch {}
 		}, (1 + Math.floor(Math.random() * 1.5)) * 1000);
 
 		if(sameApp) return
@@ -184,7 +186,7 @@ class Phone {
 	}
 
 	goRecent() {
-
+		this.openApp('recent')
 	}
 
 	goHome() {
