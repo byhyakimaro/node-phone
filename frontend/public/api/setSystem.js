@@ -106,9 +106,11 @@ const appsSystem = [
 ]
 
 const getAppsSystem = () => {
+  const apps = [];
   for (let i = 0; i < appsSystem.length; i++) {
-    return appsSystem[i];
+    apps.push(appsSystem[i])
   }
+  return apps;
 }
 
 function $(param) {

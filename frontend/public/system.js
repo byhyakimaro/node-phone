@@ -7,7 +7,11 @@ socket.on('AppsInstalled', function(appsInstalled) {
 	})
 })
 
-const apps = [getAppsSystem()]
+const apps = []
+getAppsSystem().forEach(element => {
+	apps.push(element);
+});
+
 class Phone {
 	constructor() {
 		this.element = $('.phone')
@@ -186,6 +190,7 @@ class Phone {
 	}
 
 	goRecent() {
+		console.log(apps)
 		this.openApp('recent')
 	}
 
