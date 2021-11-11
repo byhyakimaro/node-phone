@@ -54,6 +54,76 @@ class Phone {
 			if(button) this[button]()
 		}
 
+		this.slideScreen()
+	}
+
+	openApp(app) {
+		const lastApp = this.nowApp
+		app = apps.find(({ name }) => name === app.toLowerCase())
+		if(!app) throw new Error('Application not found')
+	
+		const toggle = (element, show = true) => {
+			if(!element) return
+			element.classList[show ? 'remove' : 'add']('hidden')
+			element.classList[show ? 'add' : 'remove']('active')
+		}
+		var newApp
+      
+		if(app.cache) {
+			toggle(app.cache)
+			newApp = app.cache
+		} else {
+			const div = document.createElement('div')
+			div.classList.add('app-screen', app.name, 'hidden')
+			div.dataset.alreadyOpen = app.name
+			div.innerHTML = app.html
+
+			if(app.style) {
+				const style = document.createElement('style')
+				style.innerHTML = app.style
+				div.appendChild(style)
+			}
+
+			$('.screens').appendChild(div)
+			if(app.script) {
+				const script = document.createElement('script')
+				script.innerHTML = app.script
+				script.setAttribute('type','module')
+				div.appendChild(script)
+			}
+			
+			setTimeout(() => toggle(div), 1)
+			if(app.name === 'home') { app.cache = div }
+			
+			newApp = div
+		}
+		
+		const sameApp = newApp === lastApp
+		setTimeout(() => {
+			if(!sameApp) {
+				toggle(lastApp, false)
+				const mode = newApp.dataset.alreadyOpen !== 'home' ? 'add' : 'remove'		
+				
+				if(lastApp) {
+					const lastItem = apps.find(({ name }) => name === lastApp.dataset.alreadyOpen)
+					if(lastItem && lastItem.unload) lastItem.unload(this, lastApp)
+					if(mode === 'remove') setTimeout(() => lastApp.parentElement.removeChild(lastApp), 500)
+				}
+			} 
+		}, 1)
+		
+		setTimeout(() => {
+			try {
+				$('.loading-screen', app).classList.add('hide');
+				$('.content-screen', app).classList.remove('hide');
+			} catch {}
+		}, (1 + Math.floor(Math.random() * 1.5)) * 1000);
+
+		if(sameApp) return
+		if(lastApp) this.recentApps.unshift(lastApp.dataset.alreadyOpen)
+	}
+
+	slideScreen() {
 		const homeList = $('.home-list');
       
 		let homeDown, current, startX = 0, currentX = 0;
@@ -121,72 +191,6 @@ class Phone {
 		
 			homeList.style.transform = `translateX(${currentX}px)`;
 		};
-	}
-
-	openApp(app) {
-		const lastApp = this.nowApp
-		app = apps.find(({ name }) => name === app.toLowerCase())
-		if(!app) throw new Error('Application not found')
-	
-		const toggle = (element, show = true) => {
-			if(!element) return
-			element.classList[show ? 'remove' : 'add']('hidden')
-			element.classList[show ? 'add' : 'remove']('active')
-		}
-		var newApp
-      
-		if(app.cache) {
-			toggle(app.cache)
-			newApp = app.cache
-		} else {
-			const div = document.createElement('div')
-			div.classList.add('app-screen', app.name, 'hidden')
-			div.dataset.alreadyOpen = app.name
-			div.innerHTML = app.html
-
-			if(app.style) {
-				const style = document.createElement('style')
-				style.innerHTML = app.style
-				div.appendChild(style)
-			}
-
-			$('.screens').appendChild(div)
-			if(app.script) {
-				const script = document.createElement('script')
-				script.innerHTML = app.script
-				script.setAttribute('type','module')
-				div.appendChild(script)
-			}
-			
-			setTimeout(() => toggle(div), 1)
-			if(app.name === 'home') { app.cache = div }
-			
-			newApp = div
-		}
-		
-		const sameApp = newApp === lastApp
-		setTimeout(() => {
-			if(!sameApp) {
-				toggle(lastApp, false)
-				const mode = newApp.dataset.alreadyOpen !== 'home' ? 'add' : 'remove'		
-				
-				if(lastApp) {
-					const lastItem = apps.find(({ name }) => name === lastApp.dataset.alreadyOpen)
-					if(lastItem && lastItem.unload) lastItem.unload(this, lastApp)
-					if(mode === 'remove') setTimeout(() => lastApp.parentElement.removeChild(lastApp), 500)
-				}
-			} 
-		}, 1)
-		
-		setTimeout(() => {
-			try {
-				$('.loading-screen', app).classList.add('hide');
-				$('.content-screen', app).classList.remove('hide');
-			} catch {}
-		}, (1 + Math.floor(Math.random() * 1.5)) * 1000);
-
-		if(sameApp) return
-		if(lastApp) this.recentApps.unshift(lastApp.dataset.alreadyOpen)
 	}
 
 	goRecent() {
