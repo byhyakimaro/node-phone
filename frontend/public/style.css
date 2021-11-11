@@ -110,6 +110,7 @@
 .phone .screen-phone .top-bar .bar-notf {
 	width: 100%;
 	transform: translateY(-600px);
+	transition: transform 0.3s ease 0s;
 	position: absolute;
 	height: 100%;
 	background: rgba(235, 235, 235, 95%);
