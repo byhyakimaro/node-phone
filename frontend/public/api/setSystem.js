@@ -49,6 +49,7 @@ const appsSystem = [
     `,
     style: `
     .home {
+      height: -webkit-calc(100% - 6rem) !important;
       padding: 3rem 0.65rem 4rem 0.65rem;
     }
     .home-list,.home-item {
@@ -82,10 +83,7 @@ const appsSystem = [
       cursor: pointer;
       display: flex;
       flex-wrap: wrap;
-      width: 90%;
       justify-content: center;
-      position: absolute;
-      bottom: 55px;
     }
     .icons-bottom .icon img {
       width: 43px;
