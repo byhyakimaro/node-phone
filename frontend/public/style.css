@@ -112,7 +112,8 @@
 	transform: translateY(-600px);
 	position: absolute;
 	height: 100%;
-	background: rgba(235, 235, 235, 95%)
+	background: rgba(235, 235, 235, 95%);
+	z-index: 3;
 }
 .phone .screen-phone .bottom-buttons {
 	background: rgb(4 4 4 / 20%);
