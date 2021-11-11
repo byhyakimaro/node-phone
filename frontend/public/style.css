@@ -75,6 +75,7 @@
 	align-items: center;
 	height: 30px;
 	background: rgba(0, 0, 0, 10%);
+	z-index: 2;
 }
 .phone .screen-phone .top-bar .item-bar .horario, 
 .phone .screen-phone .top-bar .item-bar .bateria {
@@ -122,7 +123,7 @@
 	border-radius: 10px;
 	border-top-left-radius: 0;
   border-top-right-radius: 0;
-	z-index: 2;
+	z-index: 3;
 	bottom: 0;
 }
 .phone .screen-phone .bottom-buttons .left, .center, .right {
